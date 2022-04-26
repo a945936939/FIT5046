@@ -1,7 +1,12 @@
 package com.example.assignment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 import androidx.work.Data;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
@@ -33,6 +38,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private AppBarConfiguration mAppBarConfiguration;
     // private StudentViewModel studentViewModel;
 
     @Override
@@ -45,6 +51,25 @@ public class MainActivity extends AppCompatActivity {
         list.add("Toy Story");
         list.add("Up");
         list.add("Shrek");
+
+        setSupportActionBar(binding.appBar.toolbar);
+
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home_fragment,
+                R.id.nav_add_fragment,
+                R.id.nav_view_fragment)
+                //to display the Navigation button as a drawer symbol,not being shown as an Up button
+                .setOpenableLayout(binding.drawerLayout)
+                .build();
+        FragmentManager fragmentManager= getSupportFragmentManager();
+        NavHostFragment navHostFragment = (NavHostFragment)
+                fragmentManager.findFragmentById(R.id.nav_host_fragment);
+        NavController navController = navHostFragment.getNavController();
+        //Sets up a NavigationView for use with a NavController.
+        NavigationUI.setupWithNavController(binding.navView, navController);
+        //Sets up a Toolbar for use with a NavController.
+        NavigationUI.setupWithNavController(binding.appBar.toolbar,navController, mAppBarConfiguration);
+
 
         // studentViewModel = new ViewModelProvider(this).get(StudentViewModel.class);
 
@@ -82,31 +107,40 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        List<Student> studentList = studentViewModel.getAllStudentsInList();
-//        // {"001":{"firstName": "frank", "lastName": "Zhang", "id": "001"}}
-//        Map<String, Student> studentMap = new HashMap<>();
-//        for (Student student: studentList)
-//        {
-//            studentMap.put(student.getStudentId(), student);
-//        }
-//        Gson gson = new Gson();
-//        String jsonStr = gson.toJson(studentMap);
-//
-//        // Transform jsonStr into "Data" type
-//        Data.Builder uploadPlaceBuilder = new Data.Builder();
-//        Map<String, Object> placeMap = new HashMap<>();
-//        placeMap.put("StudentJsonStr", jsonStr);
-//        uploadPlaceBuilder.putAll(placeMap);
-//        Data placeInfoInputData = uploadPlaceBuilder.build();
-//
-//        // transfer the data to work manager
-//        WorkRequest saveRequest =
-//                new PeriodicWorkRequest.Builder(UploadWorker.class,
-//                        1, TimeUnit.DAYS,
-//                        120,TimeUnit.MINUTES)
-//                        .setInputData(placeInfoInputData)
-//                        .build();
-//        WorkManager.getInstance(this).enqueue(saveRequest);
+        binding.navigationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, NavigationActivity.class));
+            }
+        });
+
+        /**
+         * List<Student> studentList = studentViewModel.getAllStudentsInList();
+        // {"001":{"firstName": "frank", "lastName": "Zhang", "id": "001"}}
+        Map<String, Student> studentMap = new HashMap<>();
+        for (Student student: studentList)
+        {
+            studentMap.put(student.getStudentId(), student);
+        }
+        Gson gson = new Gson();
+        String jsonStr = gson.toJson(studentMap);
+
+        // Transform jsonStr into "Data" type
+        Data.Builder uploadPlaceBuilder = new Data.Builder();
+        Map<String, Object> placeMap = new HashMap<>();
+        placeMap.put("StudentJsonStr", jsonStr);
+        uploadPlaceBuilder.putAll(placeMap);
+        Data placeInfoInputData = uploadPlaceBuilder.build();
+
+        // transfer the data to work manager
+        WorkRequest saveRequest =
+                new PeriodicWorkRequest.Builder(UploadWorker.class,
+                        1, TimeUnit.DAYS,
+                        120,TimeUnit.MINUTES)
+                        .setInputData(placeInfoInputData)
+                        .build();
+        WorkManager.getInstance(this).enqueue(saveRequest);
+         */
 
         // https://api.openweathermap.org/data/2.5/weather?lat=-37.813629&lon=144.963058&appid=80273ca2896861a72eca02c8f231e796
         Retrofit retrofit = new Retrofit.Builder()

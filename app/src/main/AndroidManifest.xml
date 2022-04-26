@@ -23,18 +23,29 @@
             android:name=".SignUpActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
+
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.Assignment.NoActionBar"
             android:windowSoftInputMode="adjustResize">
         </activity>
+
+        <activity
+            android:name=".NavigationActivity"
+            android:theme="@style/Theme.Assignment.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
         <activity
             android:name=".ThirdActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
+
         <activity
             android:name=".NewStudentActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
+
     </application>
 
 </manifest>

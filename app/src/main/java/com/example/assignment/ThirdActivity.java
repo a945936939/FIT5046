@@ -40,7 +40,7 @@ public class ThirdActivity extends AppCompatActivity {
         binding = ActivityThirdBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-
+        
         studentViewModel = new ViewModelProvider(this).get(StudentViewModel.class);
 
         final StudentListAdapter adapter = new StudentListAdapter(new StudentListAdapter.StudentDiff());
