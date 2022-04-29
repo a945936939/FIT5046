@@ -3,11 +3,10 @@ package com.example.assignment;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
-import androidx.work.Data;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
-import com.example.assignment.entity.Student;
+import com.example.assignment.entity.User;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
@@ -31,8 +30,8 @@ public class UploadWorker extends Worker {
         DatabaseReference databaseReference = firebaseDatabase.getReference("Student");
         // Transform string into Map type
         Gson gson = new Gson();
-        Type studentMapType = new TypeToken<Map<String, Student>>() {}.getType();
-        Map<String, Student> studentMap = gson.fromJson(studentJsonStr, studentMapType);
+        Type studentMapType = new TypeToken<Map<String, User>>() {}.getType();
+        Map<String, User> studentMap = gson.fromJson(studentJsonStr, studentMapType);
         // upload the data to firebase database
         databaseReference.setValue(studentMap);
         // indicate whether the work finished successfully with the result

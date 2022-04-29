@@ -40,11 +40,12 @@ dependencies {
 
     // Navigation Drawer
     implementation 'androidx.fragment:fragment:1.4.1'
-    implementation 'androidx.navigation:navigation-fragment:2.3.5'
-    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.navigation:navigation-fragment:2.4.2'
+    implementation 'androidx.navigation:navigation-ui:2.4.2'
 
     // ViewModel and LiveData
     implementation 'androidx.lifecycle:lifecycle-viewmodel:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-livedata:2.4.1'
     implementation 'androidx.lifecycle:lifecycle-common-java8:2.4.1'
 
