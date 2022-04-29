@@ -20,6 +20,10 @@ public class Root {
     public Main getMain(){
         return main;
     }
+
+    public double getTemp() {
+        return main.getTemp();
+    }
 }
 
 class Coord{

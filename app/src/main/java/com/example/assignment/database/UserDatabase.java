@@ -8,28 +8,28 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.example.assignment.dao.StudentDao;
-import com.example.assignment.entity.Student;
+import com.example.assignment.dao.UserDao;
+import com.example.assignment.entity.User;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Student.class}, version = 1, exportSchema = false)
-public abstract class StudentDatabase extends RoomDatabase {
+@Database(entities = {User.class}, version = 1, exportSchema = false)
+public abstract class UserDatabase extends RoomDatabase {
 
-    public abstract StudentDao studentDao();
+    public abstract UserDao userDao();
 
-    private static volatile StudentDatabase INSTANCE;
+    private static volatile UserDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
     public static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    public static StudentDatabase getInstance(final Context context){
+    public static UserDatabase getInstance(final Context context){
         if (INSTANCE == null) {
-            synchronized (StudentDatabase.class){
+            synchronized (UserDatabase.class){
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            StudentDatabase.class, "student_database")
+                            UserDatabase.class, "user_database")
                             .addCallback(sRoomDatabaseCallback)
                             .allowMainThreadQueries()
                             .build();
@@ -44,15 +44,15 @@ public abstract class StudentDatabase extends RoomDatabase {
         public void onCreate(@NonNull SupportSQLiteDatabase db){
             super.onCreate(db);
             databaseWriteExecutor.execute(() -> {
-                StudentDao dao = INSTANCE.studentDao();
+                UserDao dao = INSTANCE.userDao();
                 dao.deleteAll();
 
-                Student student = new Student("001", "Frank","Zhang");
-                dao.insert(student);
-                student = new Student("002", "Jerry", "Yang");
-                dao.insert(student);
-                student = new Student("003", "Daniel", "Wu");
-                dao.insert(student);
+                User user = new User("001", "Frank","Zhang");
+                dao.insert(user);
+                user = new User("002", "Jerry", "Yang");
+                dao.insert(user);
+                user = new User("003", "Daniel", "Wu");
+                dao.insert(user);
 
             });
         }

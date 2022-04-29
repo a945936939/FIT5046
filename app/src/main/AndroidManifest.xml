@@ -42,7 +42,7 @@
         </activity>
 
         <activity
-            android:name=".NewStudentActivity"
+            android:name=".NewUserActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
 

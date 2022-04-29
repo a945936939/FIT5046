@@ -6,19 +6,16 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.work.Data;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 import androidx.work.WorkRequest;
 
 import com.example.assignment.databinding.ActivityThirdBinding;
-import com.example.assignment.entity.Student;
-import com.example.assignment.viewModel.StudentViewModel;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.assignment.entity.User;
+import com.example.assignment.viewModel.UserViewModel;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
@@ -31,7 +28,8 @@ import java.util.concurrent.TimeUnit;
 public class ThirdActivity extends AppCompatActivity {
 
     private ActivityThirdBinding binding;
-    private StudentViewModel studentViewModel;
+    private UserViewModel userViewModel;
+    private List<User> users;
     public static final int NEW_STUDENT_ACTIVITY_REQUEST_CODE = 1;
 
     @Override
@@ -41,19 +39,19 @@ public class ThirdActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
         
-        studentViewModel = new ViewModelProvider(this).get(StudentViewModel.class);
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
-        final StudentListAdapter adapter = new StudentListAdapter(new StudentListAdapter.StudentDiff());
+        final UserListAdapter adapter = new UserListAdapter(new UserListAdapter.UserDiff());
         binding.recyclerview.setAdapter(adapter);
         binding.recyclerview.setLayoutManager(new LinearLayoutManager(this));
 
-        // Update the cached copy of the students in the adapter.
-        studentViewModel.getAllStudents().observe(this, adapter::submitList);
+        // Update the cached copy of the users in the adapter.
+        userViewModel.getAllUsers().observe(this, adapter::submitList);
 
         binding.addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ThirdActivity.this, NewStudentActivity.class);
+                Intent intent = new Intent(ThirdActivity.this, NewUserActivity.class);
                 startActivityForResult(intent, NEW_STUDENT_ACTIVITY_REQUEST_CODE);
             }
         });
@@ -62,34 +60,34 @@ public class ThirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-                DatabaseReference databaseReference = firebaseDatabase.getReference("Student");
-                // get current all students
-                List<Student> studentList = studentViewModel.getAllStudentsInList();
+                DatabaseReference databaseReference = firebaseDatabase.getReference("User");
+                // get current all users
+                List<User> userList = userViewModel.getAllUsersInList();
 
-                // Map {001: {student1}, 002: {student2}}
-                Map<String, Student> studentMap = new HashMap<>();
-                for (Student student: studentList)
+                // Map {001: {user1}, 002: {user2}}
+                Map<String, User> userMap = new HashMap<>();
+                for (User user : userList)
                 {
-                    studentMap.put(student.getStudentId(), student);
+                    userMap.put(user.getUserId(), user);
                 }
-                databaseReference.setValue(studentMap);
+                databaseReference.setValue(userMap);
             }
         });
 
-        List<Student> studentList = studentViewModel.getAllStudentsInList();
+        List<User> userList = userViewModel.getAllUsersInList();
         // {"001":{"firstName": "frank", "lastName": "Zhang", "id": "001"}}
-        Map<String, Student> studentMap = new HashMap<>();
-        for (Student student: studentList)
+        Map<String, User> userMap = new HashMap<>();
+        for (User user : userList)
         {
-            studentMap.put(student.getStudentId(), student);
+            userMap.put(user.getUserId(), user);
         }
         Gson gson = new Gson();
-        String jsonStr = gson.toJson(studentMap);
+        String jsonStr = gson.toJson(userMap);
 
         // Transform jsonStr into "Data" type
         Data.Builder uploadPlaceBuilder = new Data.Builder();
         Map<String, Object> placeMap = new HashMap<>();
-        placeMap.put("StudentJsonStr", jsonStr);
+        placeMap.put("UserJsonStr", jsonStr);
         uploadPlaceBuilder.putAll(placeMap);
         Data placeInfoInputData = uploadPlaceBuilder.build();
 
@@ -107,14 +105,14 @@ public class ThirdActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_STUDENT_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Student student = new Student(data.getStringExtra("studentId"), data.getStringExtra("studentFirstName"),
-                    data.getStringExtra("studentLastName"));
-            studentViewModel.insert(student);
+            User user = new User(data.getStringExtra("userId"), data.getStringExtra("userFirstName"),
+                    data.getStringExtra("userLastName"));
+            userViewModel.insert(user);
         }
         else{
             Toast.makeText(
                     getApplicationContext(),
-                    "Student ID not saved because it is empty.",
+                    "User ID not saved because it is empty.",
                     Toast.LENGTH_LONG).show();
         }
     }

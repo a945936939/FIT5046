@@ -6,13 +6,13 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "student_table")
-public class Student {
+@Entity(tableName = "user_table")
+public class User {
 
     @PrimaryKey
     @NonNull
-    @ColumnInfo(name = "studentId")
-    private String studentId;
+    @ColumnInfo(name = "userId")
+    private String userId;
 
     @NonNull
     @ColumnInfo(name = "firstName")
@@ -22,19 +22,19 @@ public class Student {
     @ColumnInfo(name = "lastName")
     private String lastName;
 
-    public Student(@NonNull String studentId, @NonNull String firstName, @NonNull String lastName){
-        this.studentId = studentId;
+    public User(@NonNull String userId, @NonNull String firstName, @NonNull String lastName){
+        this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
     @NonNull
-    public String getStudentId(){
-        return studentId;
+    public String getUserId(){
+        return userId;
     }
 
-    public void setStudentId(@NonNull String studentId){
-        this.studentId = studentId;
+    public void setUserId(@NonNull String userId){
+        this.userId = userId;
     }
 
     @NonNull

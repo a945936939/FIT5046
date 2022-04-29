@@ -5,11 +5,11 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/edit_student_id"
+        android:id="@+id/edit_user_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comic"
-        android:hint="Student ID: "
+        android:hint="User ID: "
         android:inputType="textAutoComplete"
         android:layout_margin="16dp"
         android:textSize="20sp">
@@ -17,7 +17,7 @@
     </EditText>
 
     <EditText
-        android:id="@+id/edit_student_first_name"
+        android:id="@+id/edit_user_first_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comic"
@@ -29,7 +29,7 @@
     </EditText>
 
     <EditText
-        android:id="@+id/edit_student_last_name"
+        android:id="@+id/edit_user_last_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comic"

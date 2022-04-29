@@ -2,38 +2,17 @@ package com.example.assignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.work.Data;
-import androidx.work.PeriodicWorkRequest;
-import androidx.work.WorkManager;
-import androidx.work.WorkRequest;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 
 import com.example.assignment.databinding.ActivityMainBinding;
-import com.example.assignment.entity.Student;
-import com.example.assignment.viewModel.StudentViewModel;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.gson.Gson;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import com.example.assignment.fragment.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,10 +26,12 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        List<String> list = new ArrayList<String>();
+
+        /**List<String> list = new ArrayList<String>();
         list.add("Toy Story");
         list.add("Up");
-        list.add("Shrek");
+        list.add("Shrek");*/
+
 
         setSupportActionBar(binding.appBar.toolbar);
 
@@ -69,11 +50,20 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
         //Sets up a Toolbar for use with a NavController.
         NavigationUI.setupWithNavController(binding.appBar.toolbar,navController, mAppBarConfiguration);
+        // Sets up the bottom navigation bar
+        // NavigationUI.setupWithNavController(binding.bottomBar, navController);
 
+
+        binding.homeButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+             startActivity(new Intent(MainActivity.this, HomeFragment.class));
+            }
+        });
 
         // studentViewModel = new ViewModelProvider(this).get(StudentViewModel.class);
 
-        final ArrayAdapter<String> spinnerAdapter = new
+        /**final ArrayAdapter<String> spinnerAdapter = new
                 ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
         binding.movieSpinner.setAdapter(spinnerAdapter);
 
@@ -90,15 +80,16 @@ public class MainActivity extends AppCompatActivity {
                 //binding.editText.getText().toString();
                 binding.editText.setText("");
             }
-        });
+        });*/
 
-        binding.signOutButton.setOnClickListener(new View.OnClickListener() {
+        /**binding.signOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
+
 
         binding.jumpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, NavigationActivity.class));
             }
-        });
+        });*/
 
         /**
          * List<Student> studentList = studentViewModel.getAllStudentsInList();
@@ -143,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
          */
 
         // https://api.openweathermap.org/data/2.5/weather?lat=-37.813629&lon=144.963058&appid=80273ca2896861a72eca02c8f231e796
-        Retrofit retrofit = new Retrofit.Builder()
+        /**Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.openweathermap.org/data/2.5/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -164,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<Root> call, Throwable t) {
                 System.out.println(t.getMessage());
             }
-        });
+        });*/
 
     }
 
