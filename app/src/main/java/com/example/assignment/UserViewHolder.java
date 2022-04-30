@@ -20,10 +20,6 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
         binding.textView.setText(userId + ": " + firstName + " " + lastName);
     }
 
-//    public void removeData(int position) {
-//        binding.cardView.removeView();
-//    }
-
     public UserViewHolder onCreate(@NonNull ViewGroup parent){
         binding = RecyclerviewItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new UserViewHolder(binding);
