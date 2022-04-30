@@ -13,7 +13,6 @@ import com.example.assignment.databinding.RecyclerviewItemBinding;
 import com.example.assignment.entity.User;
 import com.example.assignment.viewModel.UserViewModel;
 
-import java.util.List;
 
 public class UserListAdapter extends ListAdapter<User, UserViewHolder> {
 
@@ -32,7 +31,7 @@ public class UserListAdapter extends ListAdapter<User, UserViewHolder> {
     public void onBindViewHolder(UserViewHolder viewHolder, int position){
         User user = getItem(position);
         viewHolder.bind(user.getUserId(), user.getFirstName(), user.getLastName());
-        viewHolder.binding.itemDelete.setOnClickListener(new View.OnClickListener() {
+        viewHolder.binding.deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //viewHolder.removeData(position);
