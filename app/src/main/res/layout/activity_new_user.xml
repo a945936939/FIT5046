@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edit_user_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comic"
+        android:hint="User ID: "
+        android:inputType="textAutoComplete"
+        android:layout_margin="16dp"
+        android:textSize="20sp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_user_first_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comic"
+        android:hint="First Name: "
+        android:inputType="textAutoComplete"
+        android:layout_margin="16dp"
+        android:textSize="20sp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_user_last_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comic"
+        android:hint="Last Name: "
+        android:inputType="textAutoComplete"
+        android:layout_margin="16dp"
+        android:textSize="20sp">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_500"
+        android:strokeColor ="@color/black"
+        android:text="Save"
+        android:layout_margin="16dp"
+        android:textColor="@color/white"
+        android:layout_gravity="center">
+
+    </Button>
+</LinearLayout>

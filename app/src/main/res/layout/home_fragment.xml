@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/text_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Only wwwwwwwwiz-frank!"
+        android:gravity="center_horizontal">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tempTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/comic"
+        android:textSize="20sp"
+        android:text="@string/temperature"
+        android:textColor="@color/black">
+    </TextView>
+
+    <Button
+        android:id="@+id/signOutButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/Sign_Out"
+        android:fontFamily="@font/comic"
+        android:textColor="@color/purple_500">
+    </Button>
+    <Button
+        android:id="@+id/jumpButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/Jump"
+        android:fontFamily="@font/comic"
+        android:textColor="@color/teal_700">
+    </Button>
+</LinearLayout>
