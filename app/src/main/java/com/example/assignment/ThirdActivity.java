@@ -41,7 +41,7 @@ public class ThirdActivity extends AppCompatActivity {
         
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
-        final UserListAdapter adapter = new UserListAdapter(new UserListAdapter.UserDiff());
+        UserListAdapter adapter = new UserListAdapter(new UserListAdapter.UserDiff());
         binding.recyclerview.setAdapter(adapter);
         binding.recyclerview.setLayoutManager(new LinearLayoutManager(this));
 

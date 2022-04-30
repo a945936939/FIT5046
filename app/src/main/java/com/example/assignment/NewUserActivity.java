@@ -22,7 +22,7 @@ public class NewUserActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        binding.buttonSave.setOnClickListener(new View.OnClickListener() {
+        binding.saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent replyIntent = new Intent();
@@ -41,6 +41,13 @@ public class NewUserActivity extends AppCompatActivity {
                     setResult(RESULT_OK, replyIntent);
                 }
                 finish();
+            }
+        });
+        binding.clearButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                binding.editUserId.setText("");
+                binding.editUserFirstName.setText("");
+                binding.editUserLastName.setText("");
             }
         });
     }
