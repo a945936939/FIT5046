@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         list.add("Up");
         list.add("Shrek");*/
 
-
         setSupportActionBar(binding.appBar.toolbar);
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
