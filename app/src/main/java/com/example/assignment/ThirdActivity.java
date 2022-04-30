@@ -71,6 +71,21 @@ public class ThirdActivity extends AppCompatActivity {
                     userMap.put(user.getUserId(), user);
                 }
                 databaseReference.setValue(userMap);
+                Toast.makeText(
+                        getApplicationContext(),
+                        "All data has been uploaded.",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+
+        binding.deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userViewModel.deleteAll();
+                Toast.makeText(
+                        getApplicationContext(),
+                        "All data was deleted.",
+                        Toast.LENGTH_LONG).show();
             }
         });
 
@@ -108,6 +123,10 @@ public class ThirdActivity extends AppCompatActivity {
             User user = new User(data.getStringExtra("userId"), data.getStringExtra("userFirstName"),
                     data.getStringExtra("userLastName"));
             userViewModel.insert(user);
+            Toast.makeText(
+                    getApplicationContext(),
+                    "The user data has been added.",
+                    Toast.LENGTH_LONG).show();
         }
         else{
             Toast.makeText(

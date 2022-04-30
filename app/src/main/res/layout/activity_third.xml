@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/recyclerview_item"
-        android:elevation="10dp"
+        android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -44,4 +44,31 @@
         app2:layout_constraintStart_toStartOf="parent">
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        app2:cardBackgroundColor="@color/purple_500"
+        app2:cardCornerRadius="10dp"
+        app2:cardElevation="10dp"
+        app2:layout_constraintEnd_toEndOf="parent"
+        app2:layout_constraintStart_toStartOf="parent"
+        app2:layout_constraintTop_toBottomOf="@+id/recyclerview">
+
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:backgroundTint="@color/purple_500"
+            android:contentDescription="Delete All"
+            android:src="@drawable/ic_baseline_cancel_24">
+        </ImageButton>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

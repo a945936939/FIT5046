@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.assignment.databinding.RecyclerviewItemBinding;
+import com.example.assignment.entity.User;
 
 public class UserViewHolder extends RecyclerView.ViewHolder {
     public RecyclerviewItemBinding binding;
@@ -18,6 +19,9 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
 
     public void bind(String userId, String firstName, String lastName){
         binding.textView.setText(userId + ": " + firstName + " " + lastName);
+    }
+    public void delete(User user){
+
     }
 
     public UserViewHolder onCreate(@NonNull ViewGroup parent){

@@ -9,9 +9,9 @@
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground"
-    card_view:cardCornerRadius="12dp"
+    card_view:cardCornerRadius="10dp"
     card_view:cardElevation="20dp"
-    card_view:contentPadding="5dp"
+    card_view:contentPadding="10dp"
     card_view:cardBackgroundColor="@color/colorPrimaryDark">
 
     <LinearLayout
@@ -23,24 +23,21 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/comic"
             android:gravity="center_vertical"
             android:textSize="20sp"
             android:textStyle="bold"
             android:typeface="sans">
         </TextView>
-
-        <ImageView
-            android:id="@+id/deleteButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:padding="8dp"
-            android:src="@android:drawable/ic_menu_close_clear_cancel">
-        </ImageView>
-
+<!--        <ImageView-->
+<!--            android:id="@+id/deleteButton"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="4"-->
+<!--            android:padding="8dp"-->
+<!--            android:src="@android:drawable/ic_menu_close_clear_cancel">-->
+<!--        </ImageView>-->
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

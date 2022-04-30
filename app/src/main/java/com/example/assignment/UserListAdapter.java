@@ -8,11 +8,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.assignment.databinding.RecyclerviewItemBinding;
 import com.example.assignment.entity.User;
-import com.example.assignment.viewModel.UserViewModel;
-
 
 public class UserListAdapter extends ListAdapter<User, UserViewHolder> {
 
@@ -31,15 +30,7 @@ public class UserListAdapter extends ListAdapter<User, UserViewHolder> {
     public void onBindViewHolder(UserViewHolder viewHolder, int position){
         User user = getItem(position);
         viewHolder.bind(user.getUserId(), user.getFirstName(), user.getLastName());
-        viewHolder.binding.deleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //viewHolder.removeData(position);
-                notifyDataSetChanged();
-            }
-        });
     }
-
 
     //identify if the two users are the same
     public static class UserDiff extends DiffUtil.ItemCallback<User> {

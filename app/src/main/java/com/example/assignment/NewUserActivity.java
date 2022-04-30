@@ -43,6 +43,7 @@ public class NewUserActivity extends AppCompatActivity {
                 finish();
             }
         });
+
         binding.clearButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 binding.editUserId.setText("");
