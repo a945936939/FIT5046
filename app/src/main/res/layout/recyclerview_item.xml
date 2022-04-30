@@ -7,10 +7,11 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     android:clickable="true"
+    android:focusable="true"
     android:foreground="?selectableItemBackground"
     card_view:cardCornerRadius="12dp"
-    card_view:cardElevation="3dp"
-    card_view:contentPadding="4dp"
+    card_view:cardElevation="20dp"
+    card_view:contentPadding="5dp"
     card_view:cardBackgroundColor="@color/colorPrimaryDark">
 
     <LinearLayout
@@ -37,6 +38,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="4"
             android:padding="8dp"
-            android:src="@android:drawable/ic_menu_close_clear_cancel" />
+            android:src="@android:drawable/ic_menu_close_clear_cancel">
+        </ImageView>
+
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>
