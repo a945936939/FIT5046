@@ -42,7 +42,6 @@ public class UserListAdapter extends ListAdapter<User, UserViewHolder> {
     }
 
 
-
     //identify if the two users are the same
     public static class UserDiff extends DiffUtil.ItemCallback<User> {
 
