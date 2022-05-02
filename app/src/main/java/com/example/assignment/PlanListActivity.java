@@ -20,31 +20,27 @@ import java.util.List;
 public class PlanListActivity extends AppCompatActivity {
     private ActivityPlanlistBinding binding;
     private com.example.assignment.viewModel.PlanViewModel PlanViewModel;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityPlanlistBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
         PlanViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(PlanViewModel.class);
-        PlanViewModel.getAllCustomers().observe(this, new
-                Observer<List<Plan>>() {
+        PlanViewModel.getAllCustomers().observe(this, new Observer<List<Plan>>() {
                     @Override
                     public void onChanged(@Nullable final List<Plan> plans) {
-                        String allCustomers = "";
+                        String allPlans = "";
                         for (Plan temp : plans) {
-                            String customerDetails = ("Plan Name:" + temp.planName + "\n"+"Plan Date:" + temp.planDate + "\n" +"Plan Date:"+ temp.planContent);
-                            allCustomers = allCustomers +
-                                    System.getProperty("line.separator") + customerDetails+"/n";
+                            String planDetails = ("Plan Name:" + temp.planName + "\n"+"Plan Date:" + temp.planDate + "\n" +"Plan Details:"+ temp.planContent);
+                            allPlans += System.getProperty("line.separator") + planDetails+"/n";
                         }
-                        binding.textViewRead.setText("All data: " + allCustomers);
+
+                        binding.textViewRead.setText("All plan: " + allPlans);
                     }
                 });
-    binding.deleteButton.setOnClickListener(new View.OnClickListener() {
-        public void onClick(View v) {
-            PlanViewModel.deleteAll();
-            binding.textViewDelete.setText("All data was deleted");
-        }
-    });
+
         binding.AddPlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,4 +48,11 @@ public class PlanListActivity extends AppCompatActivity {
             }
         });
 
-}}
+        binding.deleteButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                PlanViewModel.deleteAll();
+                binding.textViewDelete.setText("All data was deleted");
+            }
+        });
+    }
+}

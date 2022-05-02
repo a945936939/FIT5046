@@ -45,7 +45,7 @@ public class HomeFragment extends Fragment {
         }
         });
 
-         binding.jumpButton.setOnClickListener(new View.OnClickListener() {
+        binding.jumpButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
         startActivity(new Intent(getActivity(), ThirdActivity.class));

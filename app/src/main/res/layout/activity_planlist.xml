@@ -11,25 +11,21 @@
             android:id="@+id/textView_read"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            />
-
-        <Button
-        android:id="@+id/deleteButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Delete Data" />
-    <TextView
-        android:id="@+id/textView_delete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+            android:background="@color/white" />
         <Button
             android:id="@+id/AddPlan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add Plan" />
-
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Data" />
+        <TextView
+            android:id="@+id/textView_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

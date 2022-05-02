@@ -50,6 +50,7 @@ public class AddPlanActivity extends AppCompatActivity {
                         }
                     }
                 });
+
         binding.addPlan.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Calendar cal = Calendar.getInstance();
@@ -68,6 +69,17 @@ public class AddPlanActivity extends AppCompatActivity {
 
         });
 
+        dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @SuppressLint("RestrictedApi")
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month+1;
+                Log.d(TAG,"OnDateSet: mm/dd/yyy"+month+"/"+day+"/"+year);
+                String date = day + "/"+ month + "/" + year;
+                binding.planDate.getEditText().setText(date);
+            }
+        };
+
         binding.planList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,7 +87,25 @@ public class AddPlanActivity extends AppCompatActivity {
             }
         });
 
-        binding.clearText.setOnClickListener(new View.OnClickListener() {
+        binding.addButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                String name = binding.planName.getEditText().getText().toString();
+                String date = binding.planDate.getEditText().getText().toString();
+                String content = binding.planContent.getEditText().getText().toString();
+
+                if ((!name.isEmpty() && name != null) && (!date.isEmpty() &&
+                        content != null) && (!content.isEmpty() && date != null)) {
+                    Plan plan = new Plan(name, date, content);
+                    PlanViewModel.insert(plan);
+                    binding.textViewAdd.setText("Plan Added: " +"\n" +
+                                                "Plan Name:" + name +
+                                                "\n"+"Plan Date:" + date +
+                                                "\n" +"Plan content:"+ content);
+                }
+            }
+        });
+
+        binding.clearButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 binding.planName.getEditText().setText("");
                 binding.planDate.getEditText().setText("");
@@ -83,31 +113,5 @@ public class AddPlanActivity extends AppCompatActivity {
             }
         });
 
-        dateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @SuppressLint("RestrictedApi")
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month+1;
-                Log.d(TAG,"OnDateSet: mm/dd/yyy"+month+"/"+day+"/"+year);
-                String date = month+"/"+day+"/"+year;
-                binding.planDate.getEditText().setText(date);
-            }
-        };
-
-        binding.addButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                String name =
-                        binding.planName.getEditText().getText().toString();
-                String
-                        date = binding.planDate.getEditText().getText().toString();
-                String content = binding.planContent.getEditText().getText().toString();
-                if ((!name.isEmpty() && name != null) && (!date.isEmpty() &&
-                        content != null) && (!content.isEmpty() && date != null)) {
-                    Plan plan = new Plan(name, date, content);
-                    PlanViewModel.insert(plan);
-                    binding.textViewAdd.setText("Plan Added: " +"\n"+"Plan Name:" +name + "\n"+"Plan Date:" + date + "\n" +"Plan Date:"+ content);
-                }
-            }
-        });
     }
 }

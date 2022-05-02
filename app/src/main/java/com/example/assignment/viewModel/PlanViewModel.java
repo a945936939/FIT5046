@@ -19,7 +19,7 @@ public class PlanViewModel extends AndroidViewModel {
     public PlanViewModel (Application application) {
         super(application);
         cRepository = new PlanRepository(application);
-        allPlans = cRepository.getAllCustomers();
+        allPlans = cRepository.getAllPlans();
     }
     @RequiresApi(api = Build.VERSION_CODES.N)
     public CompletableFuture<Plan> findByIDFuture(final int customerId){

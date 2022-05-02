@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         binding.jumpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

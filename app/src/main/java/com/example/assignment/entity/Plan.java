@@ -9,16 +9,20 @@ import java.util.Date;
 
 @Entity(tableName = "plan_table")
 public class Plan {
+
     @PrimaryKey(autoGenerate = true)
     public int uid;
+
+    @NonNull
     @ColumnInfo(name = "plan_name")
-    @NonNull
     public String planName;
+
+    @NonNull
     @ColumnInfo(name = "plan_date")
-    @NonNull
     public String planDate;
-    @ColumnInfo(name = "plan_content")
+
     @NonNull
+    @ColumnInfo(name = "plan_content")
     public String planContent;
 
     public Plan(@NonNull String planName, @NonNull String planDate, String planContent) {

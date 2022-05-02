@@ -19,11 +19,12 @@ public class PlanRepository {
     private LiveData<List<Plan>> allPlans;
     public PlanRepository(Application application){
         PlanDatabase db = PlanDatabase.getInstance(application);
-        planDao =db.customerDao();
+        planDao =db.planDao();
         allPlans= planDao.getAll();
     }
+
     // Room executes this query on a separate thread
-    public LiveData<List<Plan>> getAllCustomers() {
+    public LiveData<List<Plan>> getAllPlans() {
         return allPlans;
     }
     public void insert(final Plan plan){
