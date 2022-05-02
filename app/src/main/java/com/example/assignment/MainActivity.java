@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private AppBarConfiguration mAppBarConfiguration;
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_home_fragment,
                 R.id.nav_add_fragment,
                 R.id.nav_view_fragment,
-                R.id.nav_fragment4,
-                R.id.nav_fragment5)
+                R.id.nav_home_page)
                 //to display the Navigation button as a drawer symbol,not being shown as an Up button
                 .setOpenableLayout(binding.drawerLayout)
                 .build();

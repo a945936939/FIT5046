@@ -7,10 +7,14 @@
         android:id="@+id/nav_add_fragment"
         android:name="com.example.assignment.fragment.AddFragment"
         android:label="AddFragment" />
+    <activity
+        android:id="@+id/nav_home_page"
+        android:name="com.example.assignment.HomeActivity"
+        android:label="Home Page" />
     <fragment
         android:id="@+id/nav_home_fragment"
         android:name="com.example.assignment.fragment.HomeFragment"
-        android:label="Home Page" />
+        android:label="Home fragment" />
     <fragment
         android:id="@+id/nav_view_fragment"
         android:name="com.example.assignment.fragment.ViewFragment"

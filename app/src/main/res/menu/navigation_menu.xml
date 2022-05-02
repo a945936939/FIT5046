@@ -12,8 +12,12 @@
                 <group
                     android:checkableBehavior="single">
                     <item
-                        android:id="@+id/nav_home_fragment"
+                        android:id="@+id/nav_home_page"
                         android:title="Home Page"
+                        android:icon="@drawable/ic_baseline_home_24" />
+                    <item
+                        android:id="@+id/nav_home_fragment"
+                        android:title="Home fragment"
                         android:icon="@drawable/ic_baseline_home_24" />
                     <item
                         android:id="@+id/nav_add_fragment"
