@@ -31,6 +31,16 @@
         </activity>
 
         <activity
+            android:name=".AddPlanActivity"
+            android:theme="@style/Theme.Assignment.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
+            android:name=".PlanListActivity"
+            android:theme="@style/Theme.Assignment.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
             android:name=".NavigationActivity"
             android:theme="@style/Theme.Assignment.NoActionBar"
             android:windowSoftInputMode="adjustResize">
