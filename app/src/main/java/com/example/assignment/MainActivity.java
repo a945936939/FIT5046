@@ -13,12 +13,14 @@ import android.view.View;
 
 import com.example.assignment.databinding.ActivityMainBinding;
 import com.example.assignment.fragment.HomeFragment;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private AppBarConfiguration mAppBarConfiguration;
-    // private StudentViewModel studentViewModel;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +35,12 @@ public class MainActivity extends AppCompatActivity {
         list.add("Shrek");*/
 
         setSupportActionBar(binding.appBar.toolbar);
-
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home_fragment,
                 R.id.nav_add_fragment,
-                R.id.nav_view_fragment)
+                R.id.nav_view_fragment,
+                R.id.nav_fragment4,
+                R.id.nav_fragment5)
                 //to display the Navigation button as a drawer symbol,not being shown as an Up button
                 .setOpenableLayout(binding.drawerLayout)
                 .build();
@@ -46,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 fragmentManager.findFragmentById(R.id.nav_host_fragment);
         NavController navController = navHostFragment.getNavController();
         //Sets up a NavigationView for use with a NavController.
-        NavigationUI.setupWithNavController(binding.navView, navController);
+        NavigationUI.setupWithNavController(binding.navigationView, navController);
         //Sets up a Toolbar for use with a NavController.
         NavigationUI.setupWithNavController(binding.appBar.toolbar,navController, mAppBarConfiguration);
         // Sets up the bottom navigation bar

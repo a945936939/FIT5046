@@ -2,15 +2,51 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home_fragment"
-            android:title="Home Page" />
+            android:id="@+id/title"
+            android:title="Title">
+            <menu>
+                <group
+                    android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_home_fragment"
+                        android:title="Home Page"
+                        android:icon="@drawable/ic_baseline_home_24" />
+                    <item
+                        android:id="@+id/nav_add_fragment"
+                        android:title="Add Fragment"
+                        android:icon="@drawable/ic_baseline_favorite_24" />
+                    <item
+                        android:id="@+id/nav_view_fragment"
+                        android:title="View Fragment"
+                        android:icon="@drawable/ic_baseline_favorite_24" />
+                </group>
+            </menu>
+        </item>
+    </group>
+
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_add_fragment"
-            android:title="Add Fragment" />
-        <item
-            android:id="@+id/nav_view_fragment"
-            android:title="View Fragment" />
+            android:id="@+id/subtitle"
+            android:title="Subtitle">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_fragment4"
+                        android:title="Fragment 4"
+                        android:icon="@drawable/ic_baseline_favorite_24" />
+
+                    <item
+                        android:id="@+id/nav_fragment5"
+                        android:title="Fragment 5"
+                        android:icon="@drawable/ic_baseline_favorite_24" />
+                </group>>
+            </menu>
+        </item>
     </group>
 </menu>

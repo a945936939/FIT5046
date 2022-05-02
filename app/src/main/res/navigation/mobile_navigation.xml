@@ -15,4 +15,12 @@
         android:id="@+id/nav_view_fragment"
         android:name="com.example.assignment.fragment.ViewFragment"
         android:label="ViewFragment" />
+    <fragment
+        android:id="@+id/nav_fragment4"
+        android:name="com.example.assignment.fragment.Fragment4"
+        android:label="Fragment4" />
+    <fragment
+        android:id="@+id/nav_fragment5"
+        android:name="com.example.assignment.fragment.Fragment5"
+        android:label="Fragment5" />
 </navigation>

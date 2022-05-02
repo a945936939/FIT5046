@@ -2,23 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="176dp"
+    android:layout_height="155dp"
     android:background="@drawable/side_nav_bar"
     android:gravity="bottom"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher_round" >
+        app:srcCompat="@drawable/ic_baseline_account_circle_84" >
     </ImageView>
 
     <TextView
+        android:id="@+id/UsernameView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Navigation Drawer"
+        android:text=" Xuchong Yang"
         android:fontFamily="@font/comic"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body1">
     </TextView>
@@ -28,5 +30,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comic"
-        android:text="Select from the menu" />
+        android:text=" xyan0109@student.monash.edu" />
 </LinearLayout>
