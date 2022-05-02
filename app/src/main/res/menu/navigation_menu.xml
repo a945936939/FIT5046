@@ -45,6 +45,10 @@
                         android:id="@+id/nav_fragment5"
                         android:title="Fragment 5"
                         android:icon="@drawable/ic_baseline_favorite_24" />
+                    <item
+                        android:id="@+id/newUserActivity"
+                        android:title="New User"
+                        android:icon="@drawable/ic_baseline_favorite_24" />
                 </group>>
             </menu>
         </item>

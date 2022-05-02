@@ -1,7 +1,9 @@
 package com.example.assignment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         binding.homeButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-             startActivity(new Intent(MainActivity.this, HomeFragment.class));
+                startActivity(new Intent(MainActivity.this, HomeActivity.class));
             }
         });
 
@@ -164,7 +166,6 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(t.getMessage());
             }
         });*/
-
     }
 
 }
