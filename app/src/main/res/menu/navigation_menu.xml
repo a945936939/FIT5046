@@ -6,15 +6,32 @@
         android:id="@+id/group1"
         android:checkableBehavior="single">
         <item
+            android:id="@+id/subtitle"
+            android:title="Activity">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/ThirdActivity"
+                        android:title="User"
+                        android:icon="@drawable/ic_baseline_account_circle_24" />
+                    <item
+                        android:id="@+id/PlanListActivity"
+                        android:title="Plan"
+                        android:icon="@drawable/ic_baseline_calendar_month_24" />
+                </group>>
+            </menu>
+        </item>
+    </group>
+
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
+        <item
             android:id="@+id/title"
             android:title="Title">
             <menu>
                 <group
                     android:checkableBehavior="single">
-                    <item
-                        android:id="@+id/nav_home_page"
-                        android:title="Home Page"
-                        android:icon="@drawable/ic_baseline_home_24" />
                     <item
                         android:id="@+id/nav_home_fragment"
                         android:title="Home fragment"
@@ -28,32 +45,6 @@
                         android:title="View Fragment"
                         android:icon="@drawable/ic_baseline_favorite_24" />
                 </group>
-            </menu>
-        </item>
-    </group>
-
-    <group
-        android:id="@+id/group2"
-        android:checkableBehavior="single">
-        <item
-            android:id="@+id/subtitle"
-            android:title="Subtitle">
-            <menu>
-                <group android:checkableBehavior="single">
-                    <item
-                        android:id="@+id/nav_fragment4"
-                        android:title="Fragment 4"
-                        android:icon="@drawable/ic_baseline_favorite_24" />
-
-                    <item
-                        android:id="@+id/nav_fragment5"
-                        android:title="Fragment 5"
-                        android:icon="@drawable/ic_baseline_favorite_24" />
-                    <item
-                        android:id="@+id/newUserActivity"
-                        android:title="New User"
-                        android:icon="@drawable/ic_baseline_favorite_24" />
-                </group>>
             </menu>
         </item>
     </group>

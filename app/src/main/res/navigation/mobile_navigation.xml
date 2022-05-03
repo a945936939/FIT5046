@@ -7,10 +7,6 @@
         android:id="@+id/nav_add_fragment"
         android:name="com.example.assignment.fragment.AddFragment"
         android:label="AddFragment" />
-    <activity
-        android:id="@+id/nav_home_page"
-        android:name="com.example.assignment.HomeActivity"
-        android:label="Home Page" />
     <fragment
         android:id="@+id/nav_home_fragment"
         android:name="com.example.assignment.fragment.HomeFragment"
@@ -20,7 +16,11 @@
         android:name="com.example.assignment.fragment.ViewFragment"
         android:label="ViewFragment" />
     <activity
-        android:id="@+id/newUserActivity"
-        android:name="com.example.assignment.NewUserActivity"
-        android:label="NewUserActivity" />
+        android:id="@+id/ThirdActivity"
+        android:name="com.example.assignment.ThirdActivity"
+        android:label="thirdActivity" />
+    <activity
+        android:id="@+id/PlanListActivity"
+        android:name="com.example.assignment.PlanListActivity"
+        android:label="PlanListActivity" />
 </navigation>
