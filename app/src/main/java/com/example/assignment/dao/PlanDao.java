@@ -15,14 +15,19 @@ import java.util.List;
 public interface PlanDao {
     @Query("SELECT * FROM plan_table ORDER BY plan_name ASC")
     LiveData<List<Plan>> getAll();
+
     @Query("SELECT * FROM plan_table WHERE uid = :PlanId LIMIT 1")
     Plan findByID(int PlanId);
+
     @Insert
     void insert(Plan plan);
+
     @Delete
     void delete(Plan plan);
+
     @Update
-    void updateCustomer(Plan plan);
+    void updatePlan(Plan plan);
+
     @Query("DELETE FROM plan_table")
     void deleteAll();
 }

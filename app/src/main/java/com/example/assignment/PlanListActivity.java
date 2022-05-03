@@ -3,6 +3,7 @@ package com.example.assignment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,19 +30,19 @@ public class PlanListActivity extends AppCompatActivity {
 
         PlanViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(PlanViewModel.class);
         PlanViewModel.getAllCustomers().observe(this, new Observer<List<Plan>>() {
-                    @Override
-                    public void onChanged(@Nullable final List<Plan> plans) {
-                        String allPlans = "";
-                        for (Plan temp : plans) {
-                            String planDetails = ("Plan Name:" + temp.planName + "\n"+"Plan Date:" + temp.planDate + "\n" +"Plan Details:"+ temp.planContent);
-                            allPlans += System.getProperty("line.separator") + planDetails+"/n";
-                        }
+            @Override
+            public void onChanged(@Nullable final List<Plan> plans) {
+                String allPlans = "";
+                for (Plan temp : plans) {
+                    String planDetails = ("Plan Name:" + temp.planName + "\n"+"Plan Date:" + temp.planDate + "\n" +"Plan Details:"+ temp.planContent);
+                    allPlans += System.getProperty("line.separator") + planDetails+"/n";
+                }
 
-                        binding.textViewRead.setText("All plan: " + allPlans);
-                    }
-                });
+                binding.textViewRead.setText("All plan: " + allPlans);
+            }
+        });
 
-        binding.AddPlan.setOnClickListener(new View.OnClickListener() {
+        binding.addPlanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(PlanListActivity.this, AddPlanActivity.class));
@@ -51,7 +52,10 @@ public class PlanListActivity extends AppCompatActivity {
         binding.deleteButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 PlanViewModel.deleteAll();
-                binding.textViewDelete.setText("All data was deleted");
+                Toast.makeText(
+                        getApplicationContext(),
+                        "All data was deleted.",
+                        Toast.LENGTH_LONG).show();
             }
         });
     }

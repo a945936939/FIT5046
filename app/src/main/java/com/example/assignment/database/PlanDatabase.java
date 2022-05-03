@@ -21,7 +21,7 @@ public abstract class PlanDatabase extends RoomDatabase {
     public static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
     public static synchronized PlanDatabase getInstance(final Context
-                                                                    context) {
+                                                                context) {
         if (INSTANCE == null) {
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                     PlanDatabase.class, "PlanDatabase")

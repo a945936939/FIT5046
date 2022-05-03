@@ -35,6 +35,7 @@ public class PlanRepository {
             }
         });
     }
+
     public void deleteAll(){
         PlanDatabase.databaseWriteExecutor.execute(new Runnable() {
             @Override
@@ -43,6 +44,7 @@ public class PlanRepository {
             }
         });
     }
+
     public void delete(final Plan plan){
         PlanDatabase.databaseWriteExecutor.execute(new Runnable() {
             @Override
@@ -51,14 +53,16 @@ public class PlanRepository {
             }
         });
     }
+
     public void updateCustomer(final Plan plan){
         PlanDatabase.databaseWriteExecutor.execute(new Runnable() {
             @Override
             public void run() {
-                planDao.updateCustomer(plan);
+                planDao.updatePlan(plan);
             }
         });
     }
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     public CompletableFuture<Plan> findByIDFuture(final int planId) {
         return CompletableFuture.supplyAsync(new Supplier<Plan>() {
