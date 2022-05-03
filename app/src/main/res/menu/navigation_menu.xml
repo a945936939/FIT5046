@@ -18,7 +18,7 @@
                         android:id="@+id/PlanListActivity"
                         android:title="Plan"
                         android:icon="@drawable/ic_baseline_calendar_month_24" />
-                </group>>
+                </group>
             </menu>
         </item>
     </group>
