@@ -1,84 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/plan_ld"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Plan Id">
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:padding="16dp">
 
-        <com.google.android.material.textfield.TextInputEditText
+    <androidx.cardview.widget.CardView
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor = "@color/white"
+        app:cardCornerRadius = "18dp"
+        app:cardElevation = "10dp">
+
+        <LinearLayout
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/plan_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name">
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/plan_Id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Plan ID"
+                android:layout_margin="10dp"
+                app:endIconMode="clear_text">
 
-    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/planIDInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:fontFamily="@font/comic"
+                    android:typeface="sans"/>
 
-    <TextView
-        android:id="@+id/addPlan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Click to add date" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/plan_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Date"
-        android:inputType="none"
-        android:enabled="false">
+            <com.google.android.material.textfield.TextInputLayout
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/plan_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:layout_margin="10dp"
+                app:endIconMode="clear_text">
 
-    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/plan_content"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="content">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comic"
+                    android:typeface="sans" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-    android:id="@+id/addButton"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Add Plan" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="10dp">
 
-    <Button
-        android:id="@+id/clearButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Clear" />
+                <com.google.android.material.textfield.TextInputLayout
 
-    <Button
-        android:id="@+id/planList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Plan List" />
+                    android:id="@+id/plan_date"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="Date：dd/MM/YYYY"
+                    android:orientation="horizontal"
+ >
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/addDateText"
+                            android:layout_width="295dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/comic"
+                            android:typeface="sans" />
 
-    <TextView
-        android:id="@+id/textView_add"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <ImageView
+                    android:id="@+id/addDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    app:srcCompat="@drawable/ic_baseline_calendar_month_24">
+                </ImageView>
+            </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/plan_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="content"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comic"
+                    android:typeface="sans"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/addPlanButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/purple_500"
+                    android:strokeColor ="@color/black"
+                    android:text="Save"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/comic"
+                    android:textColor="@color/white">
+                </Button>
+
+                <Button
+                    android:id="@+id/clearButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/purple_500"
+                    android:strokeColor ="@color/black"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/comic"
+                    android:text="Clear"
+                    android:textColor="@color/white">
+                </Button>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+        <!--    <Button-->
+        <!--        android:id="@+id/planList"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="Plan List" />-->
+
+        <!--    <TextView-->
+        <!--        android:id="@+id/textView_add"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content" />-->
 
 </LinearLayout>

@@ -25,7 +25,7 @@ public class PlanViewModel extends AndroidViewModel {
     public CompletableFuture<Plan> findByIDFuture(final int customerId){
         return cRepository.findByIDFuture(customerId);
     }
-    public LiveData<List<Plan>> getAllCustomers() {
+    public LiveData<List<Plan>> getAllPlans() {
         return allPlans;
     }
     public void insert(Plan plan) {

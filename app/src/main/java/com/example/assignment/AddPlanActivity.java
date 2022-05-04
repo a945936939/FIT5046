@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +29,7 @@ import java.util.List;
 
 public class AddPlanActivity extends AppCompatActivity {
     private ActivityAddplanBinding binding;
-    private PlanViewModel PlanViewModel;
+    private PlanViewModel planViewModel;
     private DatePickerDialog.OnDateSetListener dateSetListener;
 
     @Override
@@ -37,21 +38,25 @@ public class AddPlanActivity extends AppCompatActivity {
         binding = ActivityAddplanBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        PlanViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(PlanViewModel.class);
-        PlanViewModel.getAllCustomers().observe(this, new
+
+        planViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(PlanViewModel.class);
+        planViewModel.getAllPlans().observe(this, new
                 Observer<List<Plan>>() {
                     @Override
                     public void onChanged(@Nullable final List<Plan> plans) {
-                        String allCustomers = "";
+                        String allPlans = "";
                         for (Plan temp : plans) {
-                            String customerDetails = ("Plan Name:" + temp.planName + "\n"+"Plan Date:" + temp.planDate + "\n" +"Plan Date:"+ temp.planContent);
-                            allCustomers = allCustomers +
-                                    System.getProperty("line.separator") + customerDetails+"/n";
+                            String planDetails = ("Plan ID: " + temp.uid + "\n" +
+                                    "Plan Name: " + temp.planName + "\n" +
+                                    "Plan Date: " + temp.planDate + "\n" +
+                                    "Plan Date: "+ temp.planContent);
+                            allPlans = allPlans +
+                                    System.getProperty("line.separator") + planDetails+"/n";
                         }
                     }
                 });
 
-        binding.addPlan.setOnClickListener(new View.OnClickListener(){
+        binding.addDate.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Calendar cal = Calendar.getInstance();
                 int year = cal.get(Calendar.YEAR);
@@ -80,14 +85,14 @@ public class AddPlanActivity extends AppCompatActivity {
             }
         };
 
-        binding.planList.setOnClickListener(new View.OnClickListener() {
+        /**binding.planList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AddPlanActivity.this, PlanListActivity.class));
             }
-        });
+        });*/
 
-        binding.addButton.setOnClickListener(new View.OnClickListener() {
+        binding.addPlanButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String name = binding.planName.getEditText().getText().toString();
                 String date = binding.planDate.getEditText().getText().toString();
@@ -96,17 +101,24 @@ public class AddPlanActivity extends AppCompatActivity {
                 if ((!name.isEmpty() && name != null) && (!date.isEmpty() &&
                         content != null) && (!content.isEmpty() && date != null)) {
                     Plan plan = new Plan(name, date, content);
-                    PlanViewModel.insert(plan);
-                    binding.textViewAdd.setText("Plan Added: " +"\n" +
+                    planViewModel.insert(plan);
+                    Toast.makeText(
+                            getApplicationContext(),
+                            "The plan has been added.",
+                            Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(AddPlanActivity.this, PlanListActivity.class));
+                    /**binding.textViewAdd.setText("Plan Added: " +"\n" +
+                                                "Plan ID:" + plan.uid +
                                                 "Plan Name:" + name +
                                                 "\n"+"Plan Date:" + date +
-                                                "\n" +"Plan content:"+ content);
+                                                "\n" +"Plan content:"+ content);*/
                 }
             }
         });
 
         binding.clearButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                binding.planId.getEditText().setText("");
                 binding.planName.getEditText().setText("");
                 binding.planDate.getEditText().setText("");
                 binding.planContent.getEditText().setText("");

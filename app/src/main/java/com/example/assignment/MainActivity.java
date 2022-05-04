@@ -64,12 +64,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        binding.PlanButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, PlanListActivity.class));
-            }
-        });
+//        binding.PlanButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(MainActivity.this, PlanListActivity.class));
+//            }
+//        });
 
         // studentViewModel = new ViewModelProvider(this).get(StudentViewModel.class);
 

@@ -20,7 +20,7 @@ import java.util.List;
 
 public class PlanListActivity extends AppCompatActivity {
     private ActivityPlanlistBinding binding;
-    private com.example.assignment.viewModel.PlanViewModel PlanViewModel;
+    private PlanViewModel planViewModel;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,17 +28,20 @@ public class PlanListActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        PlanViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(PlanViewModel.class);
-        PlanViewModel.getAllCustomers().observe(this, new Observer<List<Plan>>() {
+        planViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(PlanViewModel.class);
+        planViewModel.getAllPlans().observe(this, new Observer<List<Plan>>() {
             @Override
             public void onChanged(@Nullable final List<Plan> plans) {
                 String allPlans = "";
                 for (Plan temp : plans) {
-                    String planDetails = ("Plan Name:" + temp.planName + "\n"+"Plan Date:" + temp.planDate + "\n" +"Plan Details:"+ temp.planContent);
-                    allPlans += System.getProperty("line.separator") + planDetails+"/n";
+                    String planDetails = ("Plan ID: " + temp.uid + "\n"+
+                            "Plan Name: " + temp.planName + "\n" +
+                            "Plan Date: " + temp.planDate + "\n" +
+                            "Plan Details: "+ temp.planContent);
+                    allPlans += System.getProperty("line.separator") + planDetails + "\n";
                 }
 
-                binding.textViewRead.setText("All plan: " + allPlans);
+                binding.textViewRead.setText(allPlans);
             }
         });
 
@@ -51,7 +54,7 @@ public class PlanListActivity extends AppCompatActivity {
 
         binding.deleteButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                PlanViewModel.deleteAll();
+                planViewModel.deleteAll();
                 Toast.makeText(
                         getApplicationContext(),
                         "All data was deleted.",
