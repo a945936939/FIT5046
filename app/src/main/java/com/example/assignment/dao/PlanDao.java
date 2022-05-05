@@ -13,11 +13,12 @@ import java.util.List;
 
 @Dao
 public interface PlanDao {
+
     @Query("SELECT * FROM plan_table ORDER BY plan_name ASC")
     LiveData<List<Plan>> getAll();
 
-    @Query("SELECT * FROM plan_table WHERE uid = :PlanId LIMIT 1")
-    Plan findByID(int PlanId);
+    @Query("SELECT * FROM plan_table ORDER BY plan_name ASC")
+    List<Plan> getAllPlansInList();
 
     @Insert
     void insert(Plan plan);

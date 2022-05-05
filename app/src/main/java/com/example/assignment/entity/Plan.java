@@ -30,4 +30,23 @@ public class Plan {
         this.planDate=planDate;
         this.planContent = planContent;
     }
+
+    public int getUid() {
+        return uid;
+    }
+
+    @NonNull
+    public String getPlanName() {
+        return planName;
+    }
+
+    @NonNull
+    public String getPlanDate() {
+        return planDate;
+    }
+
+    @NonNull
+    public String getPlanContent() {
+        return planContent;
+    }
 }

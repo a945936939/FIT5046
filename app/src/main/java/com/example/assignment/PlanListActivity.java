@@ -15,8 +15,12 @@ import com.example.assignment.databinding.ActivityAddplanBinding;
 import com.example.assignment.databinding.ActivityPlanlistBinding;
 import com.example.assignment.entity.Plan;
 import com.example.assignment.viewModel.PlanViewModel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PlanListActivity extends AppCompatActivity {
     private ActivityPlanlistBinding binding;
@@ -49,6 +53,28 @@ public class PlanListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(PlanListActivity.this, AddPlanActivity.class));
+            }
+        });
+        
+        binding.uploadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                DatabaseReference databaseReference = firebaseDatabase.getReference("Plan");
+                // get current all plans
+                List<Plan> planList = planViewModel.getAllPlansInList();
+
+                // Map {001: {plan1}, 002: {plan2}}
+                Map<String, Plan> planMap = new HashMap<>();
+                for (Plan plan : planList)
+                {
+                    planMap.put(plan.planName, plan);
+                }
+                databaseReference.setValue(planMap);
+                Toast.makeText(
+                        getApplicationContext(),
+                        "All plan has been uploaded.",
+                        Toast.LENGTH_LONG).show();
             }
         });
 
