@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_add_fragment,
                 R.id.nav_view_fragment,
                 R.id.ThirdActivity,
-                R.id.PlanListActivity)
+                R.id.PlanListActivity,
+                R.id.ChartActivity)
                 //to display the Navigation button as a drawer symbol,not being shown as an Up button
                 .setOpenableLayout(binding.drawerLayout)
                 .build();
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         binding.homeButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, HomeFragment.class));
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
             }
         });
 

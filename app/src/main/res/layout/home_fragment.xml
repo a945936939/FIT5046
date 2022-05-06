@@ -37,16 +37,17 @@
         android:fontFamily="@font/comic"
         android:textColor="@color/purple_500">
     </Button>
-    <Button
-        android:id="@+id/jumpButton"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:text="@string/Jump"
-        android:fontFamily="@font/comic"
-        android:textColor="@color/teal_700">
-    </Button>
+
+<!--    <Button-->
+<!--        android:id="@+id/jumpButton"-->
+<!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginBottom="5dp"-->
+<!--        android:text="@string/Jump"-->
+<!--        android:fontFamily="@font/comic"-->
+<!--        android:textColor="@color/teal_700">-->
+<!--    </Button>-->
 </LinearLayout>

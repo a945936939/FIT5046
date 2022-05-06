@@ -29,7 +29,7 @@ public class UserListAdapter extends ListAdapter<User, UserViewHolder> {
     @Override
     public void onBindViewHolder(UserViewHolder viewHolder, int position){
         User user = getItem(position);
-        viewHolder.bind(user.getUserId(), user.getFirstName(), user.getLastName());
+        viewHolder.bind(user.getUserId(), user.getFirstName(), user.getLastName(), user.getGender(), user.getAge(), user.getYearOfBirth(), user.getHeight());
     }
 
     //identify if the two users are the same

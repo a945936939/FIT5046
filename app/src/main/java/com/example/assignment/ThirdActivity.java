@@ -15,6 +15,7 @@ import androidx.work.WorkRequest;
 
 import com.example.assignment.databinding.ActivityThirdBinding;
 import com.example.assignment.entity.User;
+import com.example.assignment.fragment.HomeFragment;
 import com.example.assignment.viewModel.UserViewModel;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -29,7 +30,6 @@ public class ThirdActivity extends AppCompatActivity {
 
     private ActivityThirdBinding binding;
     private UserViewModel userViewModel;
-    private List<User> users;
     public static final int NEW_STUDENT_ACTIVITY_REQUEST_CODE = 1;
 
     @Override
@@ -78,6 +78,13 @@ public class ThirdActivity extends AppCompatActivity {
             }
         });
 
+        binding.homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ThirdActivity.this, MainActivity.class));
+            }
+        });
+
         binding.deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,8 +128,12 @@ public class ThirdActivity extends AppCompatActivity {
 
         if (requestCode == NEW_STUDENT_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
             User user = new User(data.getStringExtra("userId"), data.getStringExtra("userFirstName"),
-                    data.getStringExtra("userLastName"));
-            userViewModel.insert(user);
+                data.getStringExtra("userLastName"),
+                    data.getStringExtra("userGender"),
+                    Integer.parseInt(data.getStringExtra("userAge")),
+                    data.getStringExtra("userYearOfBirth"),
+                    Double.parseDouble(data.getStringExtra("userHeight")));
+                userViewModel.insert(user);
             Toast.makeText(
                     getApplicationContext(),
                     "The user data has been added.",

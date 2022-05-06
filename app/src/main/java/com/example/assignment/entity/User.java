@@ -22,19 +22,45 @@ public class User {
     @ColumnInfo(name = "lastName")
     private String lastName;
 
-    public User(@NonNull String userId, @NonNull String firstName, @NonNull String lastName){
+    @NonNull
+    @ColumnInfo(name = "gender")
+    private String gender;
+
+    @NonNull
+    @ColumnInfo(name = "age")
+    private int age;
+
+    @NonNull
+    @ColumnInfo(name = "yearOfBirth")
+    private String yearOfBirth;
+
+    @NonNull
+    @ColumnInfo(name = "Height")
+    private double Height;
+
+    public User(@NonNull String userId, @NonNull String firstName, @NonNull String lastName, @NonNull String gender, int age, @NonNull String yearOfBirth, double Height) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.gender = gender;
+        this.age = age;
+        this.yearOfBirth = yearOfBirth;
+        this.Height = Height;
     }
+
+    @NonNull
+    public String getGender() { return gender; }
+
+    public int getAge() { return age; }
+
+    @NonNull
+    public String getYearOfBirth() { return yearOfBirth; }
+
+    public double getHeight() { return Height; }
 
     @NonNull
     public String getUserId(){
         return userId;
-    }
-
-    public void setUserId(@NonNull String userId){
-        this.userId = userId;
     }
 
     @NonNull
@@ -42,16 +68,9 @@ public class User {
         return firstName;
     }
 
-    public void setFirstName(@NonNull String firstName){
-        this.firstName = firstName;
-    }
-
     @NonNull
     public String getLastName(){
         return lastName;
     }
 
-    public void setLastName(@NonNull String lastName){
-        this.lastName = lastName;
-    }
 }

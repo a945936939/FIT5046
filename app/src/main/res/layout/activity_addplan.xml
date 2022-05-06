@@ -57,6 +57,7 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textAutoComplete"
                     android:fontFamily="@font/comic"
                     android:typeface="sans" />
 
@@ -81,6 +82,7 @@
                             android:id="@+id/addDateText"
                             android:layout_width="295dp"
                             android:layout_height="wrap_content"
+                            android:inputType="textAutoComplete"
                             android:fontFamily="@font/comic"
                             android:typeface="sans" />
 
@@ -106,6 +108,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textAutoComplete"
                     android:fontFamily="@font/comic"
                     android:typeface="sans"/>
 

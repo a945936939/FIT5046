@@ -48,6 +48,11 @@
         </activity>
 
         <activity
+            android:name=".ChartActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
             android:name=".ThirdActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>

@@ -18,6 +18,10 @@
                         android:id="@+id/PlanListActivity"
                         android:title="Plan"
                         android:icon="@drawable/ic_baseline_calendar_month_24" />
+                    <item
+                        android:id="@+id/ChartActivity"
+                        android:title="Chart"
+                        android:icon="@drawable/ic_baseline_bar_chart_24" />
                 </group>
             </menu>
         </item>

@@ -23,4 +23,8 @@
         android:id="@+id/PlanListActivity"
         android:name="com.example.assignment.PlanListActivity"
         android:label="PlanListActivity" />
+    <activity
+        android:id="@+id/ChartActivity"
+        android:name="com.example.assignment.ChartActivity"
+        android:label="PlanListActivity" />
 </navigation>

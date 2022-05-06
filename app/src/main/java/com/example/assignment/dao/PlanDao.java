@@ -14,10 +14,10 @@ import java.util.List;
 @Dao
 public interface PlanDao {
 
-    @Query("SELECT * FROM plan_table ORDER BY plan_name ASC")
+    @Query("SELECT * FROM plan_table ORDER BY uid ASC")
     List<Plan> getAllPlansInList();
 
-    @Query("SELECT * FROM plan_table ORDER BY plan_name ASC")
+    @Query("SELECT * FROM plan_table ORDER BY uid ASC")
     LiveData<List<Plan>> getAll();
 
     @Insert

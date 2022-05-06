@@ -79,6 +79,13 @@ public class PlanListActivity extends AppCompatActivity {
             }
         });
 
+        binding.homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PlanListActivity.this, MainActivity.class));
+            }
+        });
+
         binding.deleteButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 planViewModel.deleteAll();

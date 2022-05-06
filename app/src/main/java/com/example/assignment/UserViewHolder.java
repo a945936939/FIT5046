@@ -17,11 +17,13 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
         this.binding = binding;
     }
 
-    public void bind(String userId, String firstName, String lastName){
-        binding.textView.setText(userId + ": " + firstName + " " + lastName);
-    }
-    public void delete(User user){
-
+    public void bind(String userId, String firstName, String lastName, String gender, int age, String yearOfBirth, double height){
+        binding.textView.setText(new StringBuilder().
+                append(userId).append(": ").append(firstName).append(" ").append(lastName).
+                append("\nGender: ").append(gender).
+                append("\nAge: ").append(age).
+                append("\nYear: ").append(yearOfBirth).
+                append("\nHeight: ").append(height).append("cm").toString());
     }
 
     public UserViewHolder onCreate(@NonNull ViewGroup parent){
