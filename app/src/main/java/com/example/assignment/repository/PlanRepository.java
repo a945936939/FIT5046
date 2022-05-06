@@ -11,10 +11,10 @@ import com.example.assignment.entity.Plan;
 import java.util.List;
 
 public class PlanRepository {
+
     private PlanDao planDao;
     private LiveData<List<Plan>> allPlans;
     private List<Plan> allPlansInList;
-
 
     public PlanRepository(Application application){
         PlanDatabase db = PlanDatabase.getInstance(application);

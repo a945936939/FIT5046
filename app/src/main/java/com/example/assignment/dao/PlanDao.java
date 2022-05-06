@@ -15,10 +15,10 @@ import java.util.List;
 public interface PlanDao {
 
     @Query("SELECT * FROM plan_table ORDER BY plan_name ASC")
-    LiveData<List<Plan>> getAll();
+    List<Plan> getAllPlansInList();
 
     @Query("SELECT * FROM plan_table ORDER BY plan_name ASC")
-    List<Plan> getAllPlansInList();
+    LiveData<List<Plan>> getAll();
 
     @Insert
     void insert(Plan plan);

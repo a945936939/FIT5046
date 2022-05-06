@@ -14,17 +14,17 @@ public class UserRepository {
 
     private UserDao userDao;
     private LiveData<List<User>> allUsers;
-    private List<User> allusersInList;
+    private List<User> allUsersInList;
 
     public UserRepository(Application application){
         UserDatabase db = UserDatabase.getInstance(application);
         userDao =db.userDao();
         allUsers = userDao.getAlphabetizedUserInLiveData();
-        allusersInList = userDao.getAlphabetizedUsers();
+        allUsersInList = userDao.getAlphabetizedUsers();
     }
 
     public List<User> getUsersInList() {
-        return allusersInList;
+        return allUsersInList;
     }
 
     // Room executes this query on a separate thread

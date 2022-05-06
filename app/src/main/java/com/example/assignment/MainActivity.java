@@ -53,9 +53,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navigationView, navController);
         //Sets up a Toolbar for use with a NavController.
         NavigationUI.setupWithNavController(binding.appBar.toolbar,navController, mAppBarConfiguration);
-        // Sets up the bottom navigation bar
-        // NavigationUI.setupWithNavController(binding.bottomBar, navController);
-
 
         binding.homeButton.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -71,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        // studentViewModel = new ViewModelProvider(this).get(StudentViewModel.class);
+        // userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
         /**final ArrayAdapter<String> spinnerAdapter = new
                 ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
@@ -115,20 +112,20 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
         /**
-         * List<Student> studentList = studentViewModel.getAllStudentsInList();
+         * List<User> userList = userViewModel.getAllUsersInList();
         // {"001":{"firstName": "frank", "lastName": "Zhang", "id": "001"}}
-        Map<String, Student> studentMap = new HashMap<>();
-        for (Student student: studentList)
+        Map<String, User> userMap = new HashMap<>();
+        for (User user: userList)
         {
-            studentMap.put(student.getStudentId(), student);
+            userMap.put(user.getUserId(), user);
         }
         Gson gson = new Gson();
-        String jsonStr = gson.toJson(studentMap);
+        String jsonStr = gson.toJson(userMap);
 
         // Transform jsonStr into "Data" type
         Data.Builder uploadPlaceBuilder = new Data.Builder();
         Map<String, Object> placeMap = new HashMap<>();
-        placeMap.put("StudentJsonStr", jsonStr);
+        placeMap.put("UserJsonStr", jsonStr);
         uploadPlaceBuilder.putAll(placeMap);
         Data placeInfoInputData = uploadPlaceBuilder.build();
 

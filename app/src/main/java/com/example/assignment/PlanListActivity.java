@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -62,15 +63,15 @@ public class PlanListActivity extends AppCompatActivity {
                 FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
                 DatabaseReference databaseReference = firebaseDatabase.getReference("Plan");
                 // get current all plans
-                List<Plan> planList = planViewModel.getAllPlansInList();
+                LiveData<List<Plan>> planList = planViewModel.getAllPlans();
 
                 // Map {001: {plan1}, 002: {plan2}}
-                Map<String, Plan> planMap = new HashMap<>();
-                for (Plan plan : planList)
-                {
-                    planMap.put(plan.planName, plan);
-                }
-                databaseReference.setValue(planMap);
+//                Map<String, Plan> planMap = new HashMap<>();
+//                for (Plan plan:planList)
+//                {
+//                    planMap.put(plan.planName, plan);
+//                }
+                databaseReference.setValue(planList);
                 Toast.makeText(
                         getApplicationContext(),
                         "All plan has been uploaded.",
