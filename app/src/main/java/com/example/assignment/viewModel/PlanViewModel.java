@@ -23,14 +23,9 @@ public class PlanViewModel extends AndroidViewModel {
         super(application);
         cRepository = new PlanRepository(application);
         allPlans = cRepository.getAllPlans();
-        allPlansInList = cRepository.getAllPlansInList();
+        // allPlansInList = cRepository.getAllPlansInList();
 
     }
-
-//    @RequiresApi(api = Build.VERSION_CODES.N)
-//    public CompletableFuture<Plan> findByIDFuture(final String planId){
-//        return cRepository.findByIDFuture(planId);
-//    }
 
     public List<Plan> getAllPlansInList() {
         return allPlansInList;

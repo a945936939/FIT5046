@@ -28,9 +28,7 @@ public class PlanRepository {
         return allPlans;
     }
 
-    public List<Plan> getAllPlansInList() {
-        return allPlansInList;
-    }
+    public List<Plan> getAllPlansInList() { return allPlansInList; }
 
     public void insert(final Plan plan){
         PlanDatabase.databaseWriteExecutor.execute(new Runnable() {
@@ -68,13 +66,4 @@ public class PlanRepository {
         });
     }
 
-//    @RequiresApi(api = Build.VERSION_CODES.N)
-//    public CompletableFuture<Plan> findByIDFuture(final String planId) {
-//        return CompletableFuture.supplyAsync(new Supplier<Plan>() {
-//            @Override
-//            public Plan get() {
-//                return planDao.findByID(planId);
-//            }
-//        }, PlanDatabase.databaseWriteExecutor);
-//    }
 }

@@ -15,7 +15,6 @@ import androidx.work.WorkRequest;
 
 import com.example.assignment.databinding.ActivityThirdBinding;
 import com.example.assignment.entity.User;
-import com.example.assignment.fragment.HomeFragment;
 import com.example.assignment.viewModel.UserViewModel;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

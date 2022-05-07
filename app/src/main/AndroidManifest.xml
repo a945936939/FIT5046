@@ -42,17 +42,6 @@
         </activity>
 
         <activity
-            android:name=".NavigationActivity"
-            android:theme="@style/Theme.Assignment.NoActionBar"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
-
-        <activity
-            android:name=".ChartActivity"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
-
-        <activity
             android:name=".ThirdActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
@@ -61,6 +50,29 @@
             android:name=".NewUserActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
+
+        <activity
+            android:name=".NavigationActivity"
+            android:theme="@style/Theme.Assignment.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name=".chart.PieChartActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name=".chart.BarChartActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <activity
+            android:name=".chart.LineChartActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+
 
     </application>
 
