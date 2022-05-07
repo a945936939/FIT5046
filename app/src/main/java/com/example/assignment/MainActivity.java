@@ -62,6 +62,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.signOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+
 //        binding.PlanButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
