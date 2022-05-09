@@ -70,13 +70,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        binding.PlanButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this, PlanListActivity.class));
-//            }
-//        });
-
         // userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
         /**final ArrayAdapter<String> spinnerAdapter = new
