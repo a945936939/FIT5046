@@ -1,31 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_margin="15dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dp"
+        app:contentPadding="0dp"
+        app:cardBackgroundColor="@color/colorPrimaryDark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="10dp"
+                    app:srcCompat="@drawable/ic_baseline_cloud_24">
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tempTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/comic"
+                    android:layout_margin="5dp"
+                    android:textSize="20sp"
+                    android:text="@string/temperature"
+                    android:textColor="@color/black">
+                </TextView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/windSpeedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comic"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                android:text="@string/wind_speed"
+                android:textColor="@color/black">
+            </TextView>
+
+            <TextView
+                android:id="@+id/pressureTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comic"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                android:text="@string/pressure"
+                android:textColor="@color/black">
+            </TextView>
+            <TextView
+                android:id="@+id/humidityTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/comic"
+                android:layout_margin="5dp"
+                android:textSize="20sp"
+                android:text="@string/humidity"
+                android:textColor="@color/black">
+            </TextView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
     <TextView
         android:id="@+id/text_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:text="Only wwwwwwwwiz-frank!"
-        android:gravity="center_horizontal">
+        android:gravity="center">
     </TextView>
 
-    <TextView
-        android:id="@+id/tempTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:fontFamily="@font/comic"
-        android:textSize="20sp"
-        android:text="@string/temperature"
-        android:textColor="@color/black">
-    </TextView>
 
-<!--    <Button-->
+    <!--    <Button-->
 <!--        android:id="@+id/signOutButton"-->
 <!--        style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
 <!--        android:layout_width="wrap_content"-->
