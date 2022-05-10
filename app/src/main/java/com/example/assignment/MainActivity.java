@@ -1,9 +1,7 @@
 package com.example.assignment;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -14,9 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.assignment.databinding.ActivityMainBinding;
-import com.example.assignment.fragment.HomeFragment;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 

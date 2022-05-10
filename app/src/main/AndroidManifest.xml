@@ -37,7 +37,6 @@
 
         <activity
             android:name=".PlanListActivity"
-            android:theme="@style/Theme.Assignment.NoActionBar"
             android:windowSoftInputMode="adjustResize">
         </activity>
 
@@ -51,11 +50,11 @@
             android:windowSoftInputMode="adjustResize">
         </activity>
 
-        <activity
-            android:name=".NavigationActivity"
-            android:theme="@style/Theme.Assignment.NoActionBar"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
+<!--        <activity-->
+<!--            android:name=".NavigationActivity"-->
+<!--            android:theme="@style/Theme.Assignment.NoActionBar"-->
+<!--            android:windowSoftInputMode="adjustResize">-->
+<!--        </activity>-->
 
         <activity
             android:name=".chart.PieChartActivity"
