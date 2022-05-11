@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.assignment.databinding.ActivityCalendarBinding;
 
-public class Calendar extends AppCompatActivity {
+public class CalendarActivity extends AppCompatActivity {
     private ActivityCalendarBinding binding;
 
     @Override
@@ -25,7 +25,7 @@ public class Calendar extends AppCompatActivity {
                     @Override
                     public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                         String Date = dayOfMonth + "-" + (month + 1) + "-" + year;
-                        Intent intent = new Intent(Calendar.this, AddPlanActivity.class);
+                        Intent intent = new Intent(CalendarActivity.this, AddPlanActivity.class);
                         intent.putExtra("date", Date);
                         startActivity(intent);
                     }

@@ -1,15 +1,17 @@
 package com.example.assignment;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.mapbox.mapboxsdk.Mapbox;
+import android.view.View;
+import android.widget.Toast;
+
+import com.example.assignment.databinding.ActivityMainBinding;
+import com.example.assignment.databinding.ActivityMapBinding;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
+import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.location.LocationComponent;
 import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
 import com.mapbox.mapboxsdk.location.modes.CameraMode;
@@ -21,11 +23,10 @@ import com.mapbox.mapboxsdk.maps.Style;
 
 import java.util.List;
 
-public class MapActivity extends AppCompatActivity implements
-        OnMapReadyCallback, PermissionsListener {
+public class MapActivity extends AppCompatActivity implements OnMapReadyCallback, PermissionsListener {
 
     private PermissionsManager permissionsManager;
-    // private ActivityMapBinding binding;
+    private ActivityMapBinding binding;
     private MapboxMap mapboxMap;
     private MapView mapView;
 
@@ -33,8 +34,11 @@ public class MapActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Mapbox.getInstance(this, getString(R.string.mapbox_access_token));
-        setContentView(R.layout.activity_map);
-        mapView = findViewById(R.id.mapView);
+        binding = ActivityMapBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
+        mapView = binding.mapView;
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
     }
@@ -54,18 +58,12 @@ public class MapActivity extends AppCompatActivity implements
 
     @SuppressWarnings( {"MissingPermission"})
     private void enableLocationComponent(@NonNull Style loadedMapStyle) {
-        // Check if permissions are enabled and if not request
         if (PermissionsManager.areLocationPermissionsGranted(this)) {
-            // Get an instance of the component
             LocationComponent locationComponent = mapboxMap.getLocationComponent();
-            // Activate with options
             locationComponent.activateLocationComponent(
                     LocationComponentActivationOptions.builder(this, loadedMapStyle).build());
-            // Enable to make component visible
             locationComponent.setLocationComponentEnabled(true);
-            // Set the component's camera mode
             locationComponent.setCameraMode(CameraMode.TRACKING);
-            // Set the component's render mode
             locationComponent.setRenderMode(RenderMode.COMPASS);
         } else {
             permissionsManager = new PermissionsManager(this);
@@ -81,7 +79,7 @@ public class MapActivity extends AppCompatActivity implements
 
     @Override
     public void onExplanationNeeded(List<String> permissionsToExplain) {
-        Toast.makeText(this, "The app needs your current location", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "The app is asking for your location", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -141,5 +139,4 @@ public class MapActivity extends AppCompatActivity implements
         super.onLowMemory();
         mapView.onLowMemory();
     }
-
 }

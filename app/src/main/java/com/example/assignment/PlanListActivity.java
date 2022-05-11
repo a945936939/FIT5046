@@ -12,16 +12,13 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 
-import com.example.assignment.databinding.ActivityAddplanBinding;
 import com.example.assignment.databinding.ActivityPlanlistBinding;
 import com.example.assignment.entity.Plan;
 import com.example.assignment.viewModel.PlanViewModel;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class PlanListActivity extends AppCompatActivity {
     private ActivityPlanlistBinding binding;
@@ -53,7 +50,7 @@ public class PlanListActivity extends AppCompatActivity {
         binding.addPlanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PlanListActivity.this, Calendar.class));
+                startActivity(new Intent(PlanListActivity.this, CalendarActivity.class));
             }
         });
         
