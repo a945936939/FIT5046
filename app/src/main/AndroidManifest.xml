@@ -3,11 +3,14 @@
     package="com.example.assignment">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/fui_ic_check_circle_black_128dp"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/fui_ic_check_circle_black_128dp"
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment">
         <activity
@@ -72,8 +75,10 @@
             android:windowSoftInputMode="adjustResize">
         </activity>
 
-
-
+        <activity
+            android:name=".MapActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
     </application>
 
 </manifest>
