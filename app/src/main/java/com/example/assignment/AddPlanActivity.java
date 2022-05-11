@@ -5,10 +5,7 @@ import static androidx.fragment.app.FragmentManager.TAG;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.Toast;
@@ -19,13 +16,12 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.assignment.databinding.ActivityAddplanBinding;
-import com.example.assignment.databinding.ActivityMainBinding;
 import com.example.assignment.entity.Plan;
 import com.example.assignment.viewModel.PlanViewModel;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
+
+import timber.log.Timber;
 
 public class AddPlanActivity extends AppCompatActivity {
     private ActivityAddplanBinding binding;
@@ -38,10 +34,10 @@ public class AddPlanActivity extends AppCompatActivity {
         binding = ActivityAddplanBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
         Intent intent = getIntent();
         planViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(PlanViewModel.class);
-        planViewModel.getAllPlans().observe(this, new
-                Observer<List<Plan>>() {
+        planViewModel.getAllPlans().observe(this, new Observer<List<Plan>>() {
                     @Override
                     public void onChanged(@Nullable final List<Plan> plans) {
                         String allPlans = "";
@@ -55,14 +51,15 @@ public class AddPlanActivity extends AppCompatActivity {
                         }
                     }
                 });
+
         binding.planDate.getEditText().setText(intent.getStringExtra("date"));
 
         dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @SuppressLint("RestrictedApi")
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month+1;
-                Log.d(TAG,"OnDateSet: mm/dd/yyy"+month+"/"+day+"/"+year);
+                month = month + 1;
+                Timber.tag(TAG).d("OnDateSet: mm/dd/yyy" + month + "/" + day + "/" + year);
                 String date = day + "/"+ month + "/" + year;
                 binding.planDate.getEditText().setText(date);
             }
@@ -74,8 +71,7 @@ public class AddPlanActivity extends AppCompatActivity {
                 String date = binding.planDate.getEditText().getText().toString();
                 String content = binding.planContent.getEditText().getText().toString();
 
-                if ((!name.isEmpty() && name != null) && (!date.isEmpty() &&
-                        content != null) && (!content.isEmpty() && date != null)) {
+                if (!name.isEmpty() && !date.isEmpty() && !content.isEmpty()) {
                     Plan plan = new Plan(name, date, content);
                     planViewModel.insert(plan);
                     Toast.makeText(
@@ -83,11 +79,7 @@ public class AddPlanActivity extends AppCompatActivity {
                             "The plan has been added.",
                             Toast.LENGTH_LONG).show();
                     startActivity(new Intent(AddPlanActivity.this, PlanListActivity.class));
-                    /**binding.textViewAdd.setText("Plan Added: " +"\n" +
-                                                "Plan ID:" + plan.uid +
-                                                "Plan Name:" + name +
-                                                "\n"+"Plan Date:" + date +
-                                                "\n" +"Plan content:"+ content);*/
+
                 }
             }
         });

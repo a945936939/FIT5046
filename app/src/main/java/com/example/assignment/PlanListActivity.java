@@ -44,7 +44,7 @@ public class PlanListActivity extends AppCompatActivity {
                             "Plan Date: " + temp.planDate + "\n" +
                             "Plan Details: "+ temp.planContent);
                     allPlans += System.getProperty("line.separator") + planDetails + "\n";
-}
+                }
 
                 binding.textViewRead.setText(allPlans);
             }
@@ -64,13 +64,6 @@ public class PlanListActivity extends AppCompatActivity {
                 DatabaseReference databaseReference = firebaseDatabase.getReference("Plan");
                 // get current all plans
                 LiveData<List<Plan>> planList = planViewModel.getAllPlans();
-
-                // Map {001: {plan1}, 002: {plan2}}
-//                Map<String, Plan> planMap = new HashMap<>();
-//                for (Plan plan:planList)
-//                {
-//                    planMap.put(plan.planName, plan);
-//                }
                 databaseReference.setValue(planList);
                 Toast.makeText(
                         getApplicationContext(),

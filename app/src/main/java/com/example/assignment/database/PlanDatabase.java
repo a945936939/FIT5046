@@ -44,9 +44,9 @@ public abstract class PlanDatabase extends RoomDatabase {
                 PlanDao dao = INSTANCE.planDao();
                 dao.deleteAll();
 
-                Plan plan = new Plan("Meeting", "01/05/2022","Have meeting");
+                Plan plan = new Plan("Running", "01/05/2022","Running for one hour");
                 dao.insert(plan);
-                plan = new Plan("Dinner", "01/06/2022", "Have dinner");
+                plan = new Plan("Swimming", "01/06/2022", "Swimming for 30 minutes");
                 dao.insert(plan);
 
             });
