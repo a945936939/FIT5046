@@ -13,7 +13,7 @@
         mapbox:mapbox_cameraTargetLat="40.7128"
         mapbox:mapbox_cameraTargetLng="-74.0060"
         mapbox_renderTextueMode="true"
-        mapbox:mapbox_cameraZoom="14"
+        mapbox:mapbox_cameraZoom="13"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
