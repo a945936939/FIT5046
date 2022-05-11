@@ -4,11 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+<<<<<<< HEAD
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+=======
+>>>>>>> 9efbf723ec993b23c09505640c018c6842462d7d
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -24,11 +26,13 @@ import android.widget.CalendarView;
 
 import com.applandeo.materialcalendarview.EventDay;
 import com.example.assignment.databinding.ActivityMainBinding;
+<<<<<<< HEAD
 import com.example.assignment.entity.Plan;
 import com.example.assignment.fragment.HomeFragment;
 import com.example.assignment.viewModel.PlanViewModel;
+=======
+>>>>>>> 9efbf723ec993b23c09505640c018c6842462d7d
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.text.DateFormat;
 import java.text.ParseException;

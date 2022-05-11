@@ -19,4 +19,8 @@
     <string name="cancel">CANCEL</string>
     <string name="weather_api_key">80273ca2896861a72eca02c8f231e796</string>
     <string name="temperature">Temperature</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="pressure">Pressure</string>
+    <string name="humidity">Humidity</string>
+
 </resources>

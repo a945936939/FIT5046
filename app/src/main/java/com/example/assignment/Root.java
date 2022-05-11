@@ -1,5 +1,7 @@
 package com.example.assignment;
 
+import android.graphics.drawable.Icon;
+
 import java.util.ArrayList;
 
 public class Root {
@@ -17,13 +19,17 @@ public class Root {
     public String name;
     public int cod;
 
-    public Main getMain(){
-        return main;
-    }
-
+    public String getIcon() {return weather.get(0).getIcon();}
     public double getTemp() {
         return main.getTemp();
     }
+    public int getPressure() {
+        return main.getPressure();
+    }
+    public int getHumidity() {
+        return main.getHumidity();
+    }
+    public double getWindSpeed() {return wind.getSpeed();}
 }
 
 class Coord{
@@ -36,6 +42,8 @@ class Weather{
     public String main;
     public String description;
     public String icon;
+
+    public String getIcon() {return icon;}
 }
 
 class Main{
@@ -50,14 +58,17 @@ class Main{
         return temp;
     }
 
-    public void setTemp(double temp) {
-        this.temp = temp;
-    }
+    public int getPressure() {return pressure;}
+
+    public int getHumidity() {return humidity;}
+
 }
 
 class Wind{
     public double speed;
     public int deg;
+
+    public double getSpeed() {return speed;}
 }
 
 class Clouds{

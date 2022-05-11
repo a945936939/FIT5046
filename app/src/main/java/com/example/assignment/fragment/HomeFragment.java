@@ -1,6 +1,11 @@
 package com.example.assignment.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Icon;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +15,19 @@ import android.widget.ArrayAdapter;
 import androidx.fragment.app.Fragment;
 
 import com.example.assignment.LoginActivity;
+import com.example.assignment.R;
 import com.example.assignment.Root;
 import com.example.assignment.ThirdActivity;
 import com.example.assignment.WeatherApiInterface;
 import com.example.assignment.databinding.HomeFragmentBinding;
 import com.example.assignment.viewModel.SharedViewModel;
 import com.google.firebase.auth.FirebaseAuth;
+import com.squareup.picasso.Picasso;
 
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,11 +67,22 @@ public class HomeFragment extends Fragment {
         Call<Root> call = weatherApiInterface.getWeather();
 
         call.enqueue(new Callback<Root>() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onResponse(Call<Root> call, Response<Root> response) {
                 Root root = response.body();
                 double temp =  root.getTemp() - 273.15;
-                binding.tempTextView.setText("Clayton: " + String.valueOf((int)temp) + "°C");
+                String format = new DecimalFormat("#.0").format(temp);
+                int pressure = root.getPressure();
+                int humidity = root.getHumidity();
+                double windSpeed = root.getWindSpeed();
+                String icon = root.getIcon();
+                binding.tempTextView.setText("Clayton:  " + format + "°C");
+                binding.pressureTextView.setText("Pressure:  " + pressure + " hPa");
+                binding.humidityTextView.setText("Humidity:  " + humidity + " %rh");
+                binding.windSpeedTextView.setText("Wind Speed:  " + windSpeed + " m/s");
+                String url = "https://openweathermap.org/img/w/" + icon +".png";
+                Picasso.get().load(url).into(binding.imageView);
             }
 
             @Override
@@ -68,9 +90,9 @@ public class HomeFragment extends Fragment {
                 System.out.println(t.getMessage());
             }
         });
-
         return view;
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
