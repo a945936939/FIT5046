@@ -1,5 +1,6 @@
 package com.example.assignment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.assignment.databinding.ActivityMainBinding;
 import com.example.assignment.databinding.ActivityMapBinding;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
@@ -41,6 +41,14 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         mapView = binding.mapView;
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
+
+        binding.homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MapActivity.this, MainActivity.class));
+            }
+        });
+
     }
 
     @Override
