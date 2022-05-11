@@ -1,22 +1,53 @@
 package com.example.assignment;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+<<<<<<< HEAD
+import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+=======
+>>>>>>> 9efbf723ec993b23c09505640c018c6842462d7d
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CalendarView;
 
+import com.applandeo.materialcalendarview.EventDay;
 import com.example.assignment.databinding.ActivityMainBinding;
+<<<<<<< HEAD
+import com.example.assignment.entity.Plan;
+import com.example.assignment.fragment.HomeFragment;
+import com.example.assignment.viewModel.PlanViewModel;
+=======
+>>>>>>> 9efbf723ec993b23c09505640c018c6842462d7d
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
+    private ActivityMainBinding  binding;
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -25,12 +56,50 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+//        List<String> dates = new ArrayList<String>();
+//        List<String> dd = new ArrayList<String>();
+//        List<String> mm = new ArrayList<String>();
+//        List<String> yyyy = new ArrayList<String>();
+//        List<Calendar> calendars = new ArrayList<>();
+//
+//
+//        PlanViewModel planViewModel;
+//        planViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(PlanViewModel.class);
+//        planViewModel.getAllPlans().observe(this, new Observer<List<Plan>>() {
+//            @RequiresApi(api = Build.VERSION_CODES.O)
+//            @Override
+//            public void onChanged(@Nullable final List<Plan> plans) {
+//                for (Plan temp : plans) {
+//                    DateFormat formatter = new SimpleDateFormat("dd-mm-yy");
+//                    dates.add(temp.planDate);
+//
+//                }
+////                for (String days : dates){
+////                    String [] parts = days.split("-");
+////                    dd.add(parts[0]);
+////                    mm.add(parts[1]);
+////                    yyyy.add(parts[2]);
+////                }
+////                for(int i = 0; i < dd.size()-1; i++){
+////                    int dds = Integer. parseInt(dd.get(0));
+////                    int mms = Integer. parseInt(mm.get(0));
+////                    int yys = Integer. parseInt(yyyy.get(0));
+////                    Calendar calendar = Calendar.getInstance();
+////                    calendar.set(yys,mms,dds);
+////                    calendars.add(calendar);
+////                }
+//
+//                Calendar calendar = Calendar.getInstance();
+//                calendar.set(2021, 5, 13);
+//                calendars.add(calendar);
+//                binding.calendarView.setHighlightedDays(calendars);
+//            }
+//        });
 
         /**List<String> list = new ArrayList<String>();
         list.add("Toy Story");
         list.add("Up");
         list.add("Shrek");*/
-
         setSupportActionBar(binding.appBar.toolbar);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home_fragment,
@@ -51,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navigationView, navController);
         //Sets up a Toolbar for use with a NavController.
         NavigationUI.setupWithNavController(binding.appBar.toolbar,navController, mAppBarConfiguration);
+
+
 
         binding.homeButton.setOnClickListener(new View.OnClickListener() {
         @Override

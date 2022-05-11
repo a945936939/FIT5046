@@ -44,7 +44,7 @@ public class PlanListActivity extends AppCompatActivity {
                             "Plan Date: " + temp.planDate + "\n" +
                             "Plan Details: "+ temp.planContent);
                     allPlans += System.getProperty("line.separator") + planDetails + "\n";
-                }
+}
 
                 binding.textViewRead.setText(allPlans);
             }
@@ -53,7 +53,7 @@ public class PlanListActivity extends AppCompatActivity {
         binding.addPlanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PlanListActivity.this, AddPlanActivity.class));
+                startActivity(new Intent(PlanListActivity.this, Calendar.class));
             }
         });
         
