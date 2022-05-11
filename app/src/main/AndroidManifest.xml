@@ -45,7 +45,10 @@
             android:name=".ThirdActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-
+        <activity
+            android:name=".Calendar"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
         <activity
             android:name=".NewUserActivity"
             android:windowSoftInputMode="adjustResize">
