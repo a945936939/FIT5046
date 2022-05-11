@@ -38,7 +38,7 @@ public class AddPlanActivity extends AppCompatActivity {
         binding = ActivityAddplanBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        Intent i = getIntent();
+        Intent intent = getIntent();
         planViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(PlanViewModel.class);
         planViewModel.getAllPlans().observe(this, new
                 Observer<List<Plan>>() {
@@ -55,24 +55,7 @@ public class AddPlanActivity extends AppCompatActivity {
                         }
                     }
                 });
-        binding.planDate.getEditText().setText(i.getStringExtra("date"));
-//        binding.addDate.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v) {
-//                Calendar cal = Calendar.getInstance();
-//                int year = cal.get(Calendar.YEAR);
-//                int month = cal.get(Calendar.MONTH);
-//                int day = cal.get(Calendar.DAY_OF_MONTH);
-//                DatePickerDialog dialog = new DatePickerDialog(
-//                        AddPlanActivity.this,
-//                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-//                        dateSetListener,
-//                        year,month,day
-//                );
-//                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//                dialog.show();
-//            }
-//
-//        });
+        binding.planDate.getEditText().setText(intent.getStringExtra("date"));
 
         dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @SuppressLint("RestrictedApi")
@@ -84,13 +67,6 @@ public class AddPlanActivity extends AppCompatActivity {
                 binding.planDate.getEditText().setText(date);
             }
         };
-
-        /**binding.planList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(AddPlanActivity.this, PlanListActivity.class));
-            }
-        });*/
 
         binding.addPlanButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
