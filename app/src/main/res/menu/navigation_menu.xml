@@ -36,22 +36,26 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/title"
-            android:title="Title">
+            android:title="Fragment">
             <menu>
                 <group
                     android:checkableBehavior="single">
+<!--                    <item-->
+<!--                        android:id="@+id/nav_home_fragment"-->
+<!--                        android:title="Home fragment"-->
+<!--                        android:icon="@drawable/ic_baseline_home_24" />-->
                     <item
-                        android:id="@+id/nav_home_fragment"
-                        android:title="Home fragment"
-                        android:icon="@drawable/ic_baseline_home_24" />
+                        android:id="@+id/heart_rate_fragment"
+                        android:title="Heart Rate"
+                        android:icon="@drawable/ic_baseline_favorite_border_24" />
                     <item
-                        android:id="@+id/nav_add_fragment"
-                        android:title="Add Fragment"
-                        android:icon="@drawable/ic_baseline_favorite_24" />
+                        android:id="@+id/walk_activity_fragment"
+                        android:title="Walk Activity"
+                        android:icon="@drawable/ic_baseline_directions_walk_24" />
                     <item
-                        android:id="@+id/nav_view_fragment"
-                        android:title="View Fragment"
-                        android:icon="@drawable/ic_baseline_favorite_24" />
+                        android:id="@+id/kcal_fragment"
+                        android:title="Kcal"
+                        android:icon="@drawable/ic_baseline_local_fire_department_24" />
                 </group>
             </menu>
         </item>

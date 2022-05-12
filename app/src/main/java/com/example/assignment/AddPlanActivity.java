@@ -35,6 +35,27 @@ public class AddPlanActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        binding.homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AddPlanActivity.this, MainActivity.class));
+            }
+        });
+
+        binding.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AddPlanActivity.this, CalendarActivity.class));
+            }
+        });
+
+        binding.nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AddPlanActivity.this, PlanListActivity.class));
+            }
+        });
+
         Intent intent = getIntent();
         planViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(PlanViewModel.class);
         planViewModel.getAllPlans().observe(this, new Observer<List<Plan>>() {

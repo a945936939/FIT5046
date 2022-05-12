@@ -53,9 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.appBar.toolbar);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home_fragment,
-                R.id.nav_add_fragment,
-                R.id.nav_view_fragment,
+                R.id.home_fragment,
+                R.id.heart_rate_fragment,
+                R.id.walk_activity_fragment,
+                R.id.kcal_fragment,
                 R.id.ThirdActivity,
                 R.id.PlanListActivity,
                 R.id.ChartActivity,
@@ -71,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navigationView, navController);
         //Sets up a Toolbar for use with a NavController.
         NavigationUI.setupWithNavController(binding.appBar.toolbar,navController, mAppBarConfiguration);
-
 
 
         binding.homeButton.setOnClickListener(new View.OnClickListener() {
@@ -159,30 +159,6 @@ public class MainActivity extends AppCompatActivity {
                         .build();
         WorkManager.getInstance(this).enqueue(saveRequest);
          */
-
-        // https://api.openweathermap.org/data/2.5/weather?lat=-37.813629&lon=144.963058&appid=80273ca2896861a72eca02c8f231e796
-        /**Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.openweathermap.org/data/2.5/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        WeatherApiInterface weatherApiInterface = retrofit.create(WeatherApiInterface.class);
-
-        Call<Root> call = weatherApiInterface.getWeather();
-
-        call.enqueue(new Callback<Root>() {
-            @Override
-            public void onResponse(Call<Root> call, Response<Root> response) {
-                Root root = response.body();
-                double temp =  root.getMain().getTemp() - 273.15;
-                binding.tempTextView.setText("Clayton: " + String.valueOf((int)temp) + "°C");
-            }
-
-            @Override
-            public void onFailure(Call<Root> call, Throwable t) {
-                System.out.println(t.getMessage());
-            }
-        });*/
     }
 
 }

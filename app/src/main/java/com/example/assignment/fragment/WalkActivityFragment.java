@@ -10,17 +10,17 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.assignment.databinding.ViewFragmentBinding;
+import com.example.assignment.databinding.FragmentWalkActivityBinding;
 import com.example.assignment.viewModel.SharedViewModel;
 
-public class ViewFragment extends Fragment {
-    private ViewFragmentBinding binding;
-    public ViewFragment(){}
+public class WalkActivityFragment extends Fragment {
+    private FragmentWalkActivityBinding binding;
+    public WalkActivityFragment(){}
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the View for this fragment using the binding
-        binding = ViewFragmentBinding.inflate(inflater, container, false);
+        binding = FragmentWalkActivityBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         SharedViewModel model = new
                 ViewModelProvider(requireActivity()).get(SharedViewModel.class);

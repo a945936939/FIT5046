@@ -8,34 +8,35 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.assignment.databinding.AddFragmentBinding;
+import com.example.assignment.databinding.FragmentHeartRateBinding;
 import com.example.assignment.viewModel.SharedViewModel;
 
-public class AddFragment extends Fragment {
-    private AddFragmentBinding addBinding;
-    public AddFragment(){}
+public class HeartRateFragment extends Fragment {
+    private FragmentHeartRateBinding binding;
+    public HeartRateFragment(){}
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        addBinding = AddFragmentBinding.inflate(inflater, container, false);
-        View view = addBinding.getRoot();
+        binding = FragmentHeartRateBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
         SharedViewModel model = new
                 ViewModelProvider(getActivity()).get(SharedViewModel.class);
 
-        addBinding.addButton.setOnClickListener(new View.OnClickListener() {
+
+        binding.addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String message = addBinding.editText.getText().toString();
+                String message = binding.editText.getText().toString();
                 if (!message.isEmpty() ) {
                     model.setMessage(message);
                 }
             }
         });
 
-        addBinding.clearButton.setOnClickListener(new View.OnClickListener() {
+        binding.clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addBinding.editText.setText("");
+                binding.editText.setText("");
             }
         });
         return view;
@@ -43,6 +44,6 @@ public class AddFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        addBinding = null;
+        binding = null;
     }
 }

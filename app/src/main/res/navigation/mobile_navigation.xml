@@ -2,19 +2,23 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/nav_home_fragment">
+    app:startDestination="@id/home_fragment">
     <fragment
-        android:id="@+id/nav_add_fragment"
-        android:name="com.example.assignment.fragment.AddFragment"
-        android:label="AddFragment" />
-    <fragment
-        android:id="@+id/nav_home_fragment"
+        android:id="@+id/home_fragment"
         android:name="com.example.assignment.fragment.HomeFragment"
         android:label="Home fragment" />
     <fragment
-        android:id="@+id/nav_view_fragment"
-        android:name="com.example.assignment.fragment.ViewFragment"
+        android:id="@+id/heart_rate_fragment"
+        android:name="com.example.assignment.fragment.HeartRateFragment"
+        android:label="AddFragment" />
+    <fragment
+        android:id="@+id/walk_activity_fragment"
+        android:name="com.example.assignment.fragment.WalkActivityFragment"
         android:label="ViewFragment" />
+    <fragment
+        android:id="@+id/kcal_fragment"
+        android:name="com.example.assignment.fragment.KcalFragment"
+        android:label="AddFragment" />
     <activity
         android:id="@+id/ThirdActivity"
         android:name="com.example.assignment.ThirdActivity"

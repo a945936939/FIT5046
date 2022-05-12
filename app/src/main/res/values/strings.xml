@@ -23,5 +23,7 @@
     <string name="pressure">Pressure</string>
     <string name="humidity">Humidity</string>
     <string name="mapbox_access_token">pk.eyJ1IjoiamVycnkzMjA0MzAzMSIsImEiOiJjbDMxMmRzaGMxdmkwM2xtdWF1MDB4Nm02In0.92UEBCBSvVNXdr86JAXWFw</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

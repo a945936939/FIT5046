@@ -20,11 +20,31 @@ public class CalendarActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        binding.calendar.setOnDateChangeListener(
-                new CalendarView.OnDateChangeListener() {
+        binding.homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CalendarActivity.this, MainActivity.class));
+            }
+        });
+
+        binding.backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CalendarActivity.this, PlanListActivity.class));
+            }
+        });
+
+        binding.nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CalendarActivity.this, AddPlanActivity.class));
+            }
+        });
+
+        binding.calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
                     @Override
-                    public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                        String Date = dayOfMonth + "-" + (month + 1) + "-" + year;
+                    public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int day) {
+                        String Date = day + "-" + (month + 1) + "-" + year;
                         Intent intent = new Intent(CalendarActivity.this, AddPlanActivity.class);
                         intent.putExtra("date", Date);
                         startActivity(intent);

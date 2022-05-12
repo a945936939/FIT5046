@@ -38,8 +38,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private ActivityMapBinding binding;
     private MapboxMap mapboxMap;
     private MapView mapView;
-    private GeoJsonSource geoJsonSource;
-    private ValueAnimator animator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
