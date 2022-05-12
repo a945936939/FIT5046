@@ -14,6 +14,7 @@ import com.example.assignment.databinding.FragmentWalkActivityBinding;
 import com.example.assignment.viewModel.SharedViewModel;
 
 public class WalkActivityFragment extends Fragment {
+
     private FragmentWalkActivityBinding binding;
     public WalkActivityFragment(){}
     @Override

@@ -17,6 +17,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @Database(entities = {Plan.class}, version = 1, exportSchema = false)
+
 public abstract class PlanDatabase extends RoomDatabase {
     public abstract PlanDao planDao();
     private static PlanDatabase INSTANCE;

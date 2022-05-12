@@ -13,8 +13,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.assignment.LoginActivity;
+import com.example.assignment.MainActivity;
 import com.example.assignment.R;
 import com.example.assignment.Root;
 import com.example.assignment.ThirdActivity;
@@ -55,6 +58,33 @@ public class HomeFragment extends Fragment {
                 startActivity(new Intent(getActivity(), LoginActivity.class));
             }
         });*/
+
+        binding.heartRateView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity mainActivity = (MainActivity) getActivity();
+                assert mainActivity != null;
+                mainActivity.getHeartRateFragment();
+            }
+        });
+
+        binding.walkActivityView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity mainActivity = (MainActivity) getActivity();
+                assert mainActivity != null;
+                mainActivity.getWalkActivityFragment();
+            }
+        });
+
+        binding.kcalView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity mainActivity = (MainActivity) getActivity();
+                assert mainActivity != null;
+                mainActivity.getKcalFragment();
+            }
+        });
 
         // https://api.openweathermap.org/data/2.5/weather?lat=-37.813629&lon=144.963058&appid=80273ca2896861a72eca02c8f231e796
         Retrofit retrofit = new Retrofit.Builder()

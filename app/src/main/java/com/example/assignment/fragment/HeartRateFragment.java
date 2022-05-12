@@ -12,6 +12,7 @@ import com.example.assignment.databinding.FragmentHeartRateBinding;
 import com.example.assignment.viewModel.SharedViewModel;
 
 public class HeartRateFragment extends Fragment {
+
     private FragmentHeartRateBinding binding;
     public HeartRateFragment(){}
     @Override
@@ -23,22 +24,7 @@ public class HeartRateFragment extends Fragment {
                 ViewModelProvider(getActivity()).get(SharedViewModel.class);
 
 
-        binding.addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String message = binding.editText.getText().toString();
-                if (!message.isEmpty() ) {
-                    model.setMessage(message);
-                }
-            }
-        });
 
-        binding.clearButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.editText.setText("");
-            }
-        });
         return view;
     }
     @Override

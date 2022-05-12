@@ -40,10 +40,10 @@
             <menu>
                 <group
                     android:checkableBehavior="single">
-<!--                    <item-->
-<!--                        android:id="@+id/nav_home_fragment"-->
-<!--                        android:title="Home fragment"-->
-<!--                        android:icon="@drawable/ic_baseline_home_24" />-->
+                    <item
+                        android:id="@+id/home_fragment"
+                        android:title="Home"
+                        android:icon="@drawable/ic_baseline_home_24" />
                     <item
                         android:id="@+id/heart_rate_fragment"
                         android:title="Heart Rate"

@@ -24,7 +24,10 @@ import android.widget.CalendarView;
 import com.applandeo.materialcalendarview.EventDay;
 import com.example.assignment.databinding.ActivityMainBinding;
 import com.example.assignment.entity.Plan;
+import com.example.assignment.fragment.HeartRateFragment;
 import com.example.assignment.fragment.HomeFragment;
+import com.example.assignment.fragment.KcalFragment;
+import com.example.assignment.fragment.WalkActivityFragment;
 import com.example.assignment.viewModel.PlanViewModel;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -159,6 +162,28 @@ public class MainActivity extends AppCompatActivity {
                         .build();
         WorkManager.getInstance(this).enqueue(saveRequest);
          */
+    }
+
+    public void getHeartRateFragment(){
+        FragmentManager fragmentmanager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentmanager.beginTransaction();
+        HeartRateFragment heartRateFragment = new HeartRateFragment();
+        fragmentTransaction.replace(R.id.nav_host_fragment, heartRateFragment);
+        fragmentTransaction.commit();
+    }
+    public void getWalkActivityFragment(){
+        FragmentManager fragmentmanager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentmanager.beginTransaction();
+        WalkActivityFragment walkActivityFragment = new WalkActivityFragment();
+        fragmentTransaction.replace(R.id.nav_host_fragment, walkActivityFragment);
+        fragmentTransaction.commit();
+    }
+    public void getKcalFragment(){
+        FragmentManager fragmentmanager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentmanager.beginTransaction();
+        KcalFragment kcalFragment = new KcalFragment();
+        fragmentTransaction.replace(R.id.nav_host_fragment, kcalFragment);
+        fragmentTransaction.commit();
     }
 
 }

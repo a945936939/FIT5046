@@ -10,23 +10,23 @@
     <fragment
         android:id="@+id/heart_rate_fragment"
         android:name="com.example.assignment.fragment.HeartRateFragment"
-        android:label="AddFragment" />
+        android:label="Heart Rate" />
     <fragment
         android:id="@+id/walk_activity_fragment"
         android:name="com.example.assignment.fragment.WalkActivityFragment"
-        android:label="ViewFragment" />
+        android:label="Walk Activity" />
     <fragment
         android:id="@+id/kcal_fragment"
         android:name="com.example.assignment.fragment.KcalFragment"
-        android:label="AddFragment" />
+        android:label="Kcal" />
     <activity
         android:id="@+id/ThirdActivity"
         android:name="com.example.assignment.ThirdActivity"
-        android:label="thirdActivity" />
+        android:label="User List" />
     <activity
         android:id="@+id/PlanListActivity"
         android:name="com.example.assignment.PlanListActivity"
-        android:label="PlanListActivity" />
+        android:label="Plan List" />
     <activity
         android:id="@+id/MapActivity"
         android:name="com.example.assignment.MapActivity"
@@ -34,5 +34,5 @@
     <activity
         android:id="@+id/ChartActivity"
         android:name="com.example.assignment.chart.PieChartActivity"
-        android:label="PlanListActivity" />
+        android:label="ChartActivity" />
 </navigation>
