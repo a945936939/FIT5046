@@ -160,7 +160,7 @@
                     android:id="@+id/walk_activity_icon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/walk_activity" />
+                    app:srcCompat="@drawable/walk_icon" />
 
                 <TextView
                     android:id="@+id/walk_number"

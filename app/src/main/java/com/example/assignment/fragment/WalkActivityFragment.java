@@ -23,15 +23,7 @@ public class WalkActivityFragment extends Fragment {
         // Inflate the View for this fragment using the binding
         binding = FragmentWalkActivityBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-        SharedViewModel model = new
-                ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
-        model.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                binding.textMessage.setText(s);
-            }
-        });
         return view;
     }
     @Override

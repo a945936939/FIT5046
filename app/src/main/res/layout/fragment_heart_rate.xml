@@ -15,7 +15,6 @@
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/heart_rate_view"
             android:layout_width="104dp"
             android:layout_height="40dp"
             android:layout_marginTop="15dp"
@@ -114,7 +113,6 @@
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
         android:layout_height="309dp"
-        android:foreground="?selectableItemBackground"
         app:srcCompat="@drawable/heart_rate_chart" />
 
     <LinearLayout

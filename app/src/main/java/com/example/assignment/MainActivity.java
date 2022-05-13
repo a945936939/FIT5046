@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 R.id.kcal_fragment,
                 R.id.ThirdActivity,
                 R.id.PlanListActivity,
-                R.id.ChartActivity,
-                R.id.MapActivity)
+                R.id.MapActivity,
+                R.id.ChartActivity)
                 //to display the Navigation button as a drawer symbol,not being shown as an Up button
                 .setOpenableLayout(binding.drawerLayout)
                 .build();
