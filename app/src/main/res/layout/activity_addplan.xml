@@ -115,6 +115,41 @@
                     android:typeface="sans"/>
 
             </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/plan_Location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Location"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textAutoComplete"
+                    android:fontFamily="@font/comic"
+                    android:typeface="sans"/>
+                <com.google.android.material.textfield.TextInputLayout
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:id="@+id/plan_Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="UserEmail"
+                    app:endIconMode="clear_text">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textAutoComplete"
+                        android:fontFamily="@font/comic"
+                        android:typeface="sans"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -129,6 +164,20 @@
                     android:backgroundTint="@color/purple_500"
                     android:strokeColor ="@color/black"
                     android:text="Save"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/comic"
+                    android:textColor="@color/white">
+                </Button>
+
+                <Button
+                    android:id="@+id/addCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/purple_500"
+                    android:strokeColor ="@color/black"
+                    android:text="Calendar"
                     android:layout_marginTop="0dp"
                     android:layout_marginBottom="5dp"
                     android:layout_marginEnd="20dp"

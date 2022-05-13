@@ -21,7 +21,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CalendarView;
 
-import com.applandeo.materialcalendarview.EventDay;
 import com.example.assignment.databinding.ActivityMainBinding;
 import com.example.assignment.entity.Plan;
 import com.example.assignment.fragment.HeartRateFragment;

@@ -2,6 +2,7 @@ package com.example.assignment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.CalendarView;
 
@@ -9,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.assignment.databinding.ActivityCalendarBinding;
+
+import java.util.Calendar;
 
 public class CalendarActivity extends AppCompatActivity {
     private ActivityCalendarBinding binding;
@@ -40,7 +43,6 @@ public class CalendarActivity extends AppCompatActivity {
                 startActivity(new Intent(CalendarActivity.this, AddPlanActivity.class));
             }
         });
-
         binding.calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
                     @Override
                     public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int day) {
