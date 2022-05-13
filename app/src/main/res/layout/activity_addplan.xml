@@ -115,6 +115,7 @@
                     android:typeface="sans"/>
 
             </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -131,7 +132,9 @@
                     android:inputType="textAutoComplete"
                     android:fontFamily="@font/comic"
                     android:typeface="sans"/>
-                <com.google.android.material.textfield.TextInputLayout
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
 
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:id="@+id/plan_Email"
@@ -144,11 +147,10 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textAutoComplete"
+                        android:inputType="textEmailAddress"
                         android:fontFamily="@font/comic"
                         android:typeface="sans"/>
 
-                </com.google.android.material.textfield.TextInputLayout>
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
@@ -164,26 +166,23 @@
                     android:backgroundTint="@color/purple_500"
                     android:strokeColor ="@color/black"
                     android:text="Save"
-                    android:layout_marginTop="0dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="15dp"
                     android:fontFamily="@font/comic"
                     android:textColor="@color/white">
                 </Button>
 
-                <Button
-                    android:id="@+id/addCalendar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/purple_500"
-                    android:strokeColor ="@color/black"
-                    android:text="Calendar"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:fontFamily="@font/comic"
-                    android:textColor="@color/white">
-                </Button>
+<!--                <Button-->
+<!--                    android:id="@+id/addCalendar"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:backgroundTint="@color/purple_500"-->
+<!--                    android:strokeColor ="@color/black"-->
+<!--                    android:text="Calendar"-->
+<!--                    android:layout_marginBottom="5dp"-->
+<!--                    android:fontFamily="@font/comic"-->
+<!--                    android:textColor="@color/white">-->
+<!--                </Button>-->
 
                 <Button
                     android:id="@+id/clearButton"
@@ -191,13 +190,20 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/purple_500"
                     android:strokeColor ="@color/black"
-                    android:layout_marginTop="0dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="15dp"
                     android:fontFamily="@font/comic"
                     android:text="Clear"
                     android:textColor="@color/white">
                 </Button>
+
+                <ImageView
+                    android:id="@+id/addCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="5dp"
+                    app:srcCompat="@drawable/google_calendar" />
 
             </LinearLayout>
         </LinearLayout>
