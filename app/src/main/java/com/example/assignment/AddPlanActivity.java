@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.Toast;
@@ -91,7 +92,8 @@ public class AddPlanActivity extends AppCompatActivity {
                 String name = binding.planName.getEditText().getText().toString();
                 String date = binding.planDate.getEditText().getText().toString();
                 String content = binding.planContent.getEditText().getText().toString();
-
+                String email = binding.planEmail.getEditText().getText().toString();
+                String location = binding.planLocation.getEditText().getText().toString();
                 if (!name.isEmpty() && !date.isEmpty() && !content.isEmpty()) {
                     Plan plan = new Plan(name, date, content);
                     planViewModel.insert(plan);
@@ -102,8 +104,28 @@ public class AddPlanActivity extends AppCompatActivity {
                     startActivity(new Intent(AddPlanActivity.this, PlanListActivity.class));
 
                 }
+
+
+
             }
         });
+binding.addCalendar.setOnClickListener(new View.OnClickListener() {
+    public void onClick(View v) {
+        String name = binding.planName.getEditText().getText().toString();
+        String content = binding.planContent.getEditText().getText().toString();
+        String email = binding.planEmail.getEditText().getText().toString();
+        String location = binding.planLocation.getEditText().getText().toString();
+        Intent intent1 = new Intent(Intent.ACTION_INSERT);
+        intent1.setData(CalendarContract.Events.CONTENT_URI);
+        intent1.putExtra(CalendarContract.Events.TITLE, name);
+        intent1.putExtra(CalendarContract.Events.EVENT_LOCATION, location);
+        intent1.putExtra(CalendarContract.Events.DESCRIPTION, content);
+        intent1.putExtra(CalendarContract.Events.ALL_DAY, true);
+        intent1.putExtra(Intent.EXTRA_EMAIL, email);
+        startActivity(intent1);
+    }
+});
+
 
         binding.clearButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

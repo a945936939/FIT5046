@@ -88,5 +88,18 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // Calendar
-    implementation 'com.applandeo:material-calendar-view:1.7.0'
+//    dependencies {
+//        implementation fileTree(dir: 'libs', include: ['*.jar'])
+//
+//        //noinspection GradleCompatible
+//        implementation 'com.android.support:appcompat-v7:25.0.1'
+//        implementation 'com.google.android.gms:play-services-auth:15.0.1'
+//        implementation 'pub.devrel:easypermissions:0.3.0'
+//        implementation('com.google.api-client:google-api-client-android:1.23.0') {
+//            exclude group: 'org.apache.httpcomponents'
+//        }
+//        implementation('com.google.apis:google-api-services-<AIzaSyCFLLa6ZfnieEFx3DYAMUvbkybGAe41u2o>-<VERSION>') {
+//            exclude group: 'org.apache.httpcomponents'
+//        }
+//    }
 }
