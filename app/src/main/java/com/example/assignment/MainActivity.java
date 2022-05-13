@@ -1,45 +1,25 @@
 package com.example.assignment;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
+
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CalendarView;
 
 import com.example.assignment.databinding.ActivityMainBinding;
-import com.example.assignment.entity.Plan;
 import com.example.assignment.fragment.HeartRateFragment;
-import com.example.assignment.fragment.HomeFragment;
 import com.example.assignment.fragment.KcalFragment;
 import com.example.assignment.fragment.WalkActivityFragment;
-import com.example.assignment.viewModel.PlanViewModel;
+import com.example.assignment.search.SearchActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -95,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
             }
         });
         // userViewModel = new ViewModelProvider(this).get(UserViewModel.class);

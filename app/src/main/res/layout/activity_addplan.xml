@@ -97,6 +97,7 @@
                     app:srcCompat="@drawable/ic_baseline_calendar_month_24">
                 </ImageView>
             </LinearLayout>
+
             <com.google.android.material.textfield.TextInputLayout
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
