@@ -92,6 +92,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
         // userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
         /**final ArrayAdapter<String> spinnerAdapter = new
