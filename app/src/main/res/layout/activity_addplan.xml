@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:gravity="center">
+
     <androidx.cardview.widget.CardView
         android:layout_width = "match_parent"
         android:layout_height = "wrap_content"
@@ -134,10 +135,11 @@
                         android:fontFamily="@font/comic"
                         android:typeface="sans"/>
             </com.google.android.material.textfield.TextInputLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:gravity="center"
                 android:orientation="horizontal">
                 <Button
@@ -145,49 +147,36 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/purple_500"
-                    android:strokeColor ="@color/black"
-                    android:text="Save"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginEnd="15dp"
                     android:fontFamily="@font/comic"
                     android:strokeColor="@color/black"
                     android:text="Save"
                     android:textColor="@color/white">
                 </Button>
-                <!--                <Button-->
-                <!--                    android:id="@+id/addCalendar"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:backgroundTint="@color/purple_500"-->
-                <!--                    android:strokeColor ="@color/black"-->
-                <!--                    android:text="Calendar"-->
-                <!--                    android:layout_marginBottom="5dp"-->
-                <!--                    android:fontFamily="@font/comic"-->
-                <!--                    android:textColor="@color/white">-->
-                <!--                </Button>-->
+
                 <Button
                     android:id="@+id/clearButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/purple_500"
-                    android:strokeColor ="@color/black"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="15dp"
                     android:fontFamily="@font/comic"
                     android:strokeColor="@color/black"
-                    android:text="Calendar"
-                    android:textColor="@color/white"></Button>
+                    android:text="Clear"
+                    android:textColor="@color/white">
+                </Button>
+
                 <ImageView
                     android:id="@+id/addCalendar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:foreground="?selectableItemBackground"
                     android:layout_marginStart="20dp"
-                    android:layout_marginBottom="5dp"
                     app:srcCompat="@drawable/google_calendar" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/homeButton"
         android:layout_width="wrap_content"

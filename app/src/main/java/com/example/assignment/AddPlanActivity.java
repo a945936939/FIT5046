@@ -139,17 +139,14 @@ public class AddPlanActivity extends AppCompatActivity {
         });
 
 
-
-
-
-//        binding.clearButton.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                binding.planId.getEditText().setText("");
-//                binding.planName.getEditText().setText("");
-//                binding.planDate.getEditText().setText("");
-//                binding.planContent.getEditText().setText("");
-//            }
-//        });
+        binding.clearButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                binding.planId.getEditText().setText("");
+                binding.planName.getEditText().setText("");
+                binding.planDate.getEditText().setText("");
+                binding.planContent.getEditText().setText("");
+            }
+        });
 
     }
 

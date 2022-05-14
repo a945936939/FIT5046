@@ -56,11 +56,7 @@ public class HomeFragment extends Fragment {
     private HomeFragmentBinding binding;
     CallbackManager callbackManager;
     ShareDialog shareDialog;
-
-
-    //creating the content of facebook sharing
     ShareButton shareButton;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -152,6 +148,7 @@ public class HomeFragment extends Fragment {
                 System.out.println(t.getMessage());
             }
         });
+
 //        binding.heartRateIcon.setImageBitmap(image);
 //        if (ShareDialog.canShow(ShareLinkContent.class)) {
 //            Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.kcal);
@@ -165,6 +162,7 @@ public class HomeFragment extends Fragment {
 //                    shareButton = binding.sbPlan;
 //        shareButton.setShareContent(content);
 //        }
+
         shareButton = binding.sbPlan;
         shareButton.setShareContent(content);
         Log.d("button",shareButton.getClass().toString());
