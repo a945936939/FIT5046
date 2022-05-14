@@ -20,10 +20,6 @@ public class HeartRateFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentHeartRateBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-        SharedViewModel model = new
-                ViewModelProvider(getActivity()).get(SharedViewModel.class);
-
-
 
         return view;
     }

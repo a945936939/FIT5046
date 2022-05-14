@@ -2,12 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.assignment">
-
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/fui_ic_check_circle_black_128dp"
@@ -21,7 +19,6 @@
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -29,23 +26,19 @@
             android:name=".SignUpActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.Assignment.NoActionBar"
             android:windowSoftInputMode="adjustResize">
         </activity>
-
         <activity
             android:name=".AddPlanActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-
         <activity
             android:name=".PlanListActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-
         <activity
             android:name=".ThirdActivity"
             android:windowSoftInputMode="adjustResize">
@@ -58,32 +51,30 @@
             android:name=".NewUserActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-
         <activity
             android:name=".chart.PieChartActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-
         <activity
             android:name=".chart.BarChartActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-
         <activity
             android:name=".chart.LineChartActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-
         <activity
             android:name=".MapActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
-
-    <meta-data tools:replace="android:value" android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id" />
-    <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+        <meta-data tools:replace="android:value" android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id" />
+        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
         <provider android:authorities="com.facebook.app.FacebookContentProvider667423597654187"
             android:name="com.facebook.FacebookContentProvider"
             android:exported="true" />
+        <activity
+            android:name=".search.SearchActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
     </application>
-
 </manifest>

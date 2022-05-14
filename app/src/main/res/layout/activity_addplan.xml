@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:gravity="center">
-
     <androidx.cardview.widget.CardView
         android:layout_width = "match_parent"
         android:layout_height = "wrap_content"
@@ -19,12 +18,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
             <com.google.android.material.textfield.TextInputLayout
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -34,7 +31,6 @@
                 android:hint="Plan ID"
                 android:layout_margin="10dp"
                 app:endIconMode="clear_text">
-
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/planIDInput"
                     android:layout_width="match_parent"
@@ -42,9 +38,7 @@
                     android:inputType="number"
                     android:fontFamily="@font/comic"
                     android:typeface="sans"/>
-
             </com.google.android.material.textfield.TextInputLayout>
-
             <com.google.android.material.textfield.TextInputLayout
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -54,7 +48,6 @@
                 android:hint="Name"
                 android:layout_margin="10dp"
                 app:endIconMode="clear_text">
-
                 <com.google.android.material.textfield.TextInputEditText
 
                     android:layout_width="match_parent"
@@ -62,15 +55,12 @@
                     android:inputType="textAutoComplete"
                     android:fontFamily="@font/comic"
                     android:typeface="sans" />
-
             </com.google.android.material.textfield.TextInputLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_margin="10dp">
-
                 <com.google.android.material.textfield.TextInputLayout
 
                     android:id="@+id/plan_date"
@@ -80,14 +70,13 @@
                     android:hint="Date：dd/MM/YYYY"
                     android:orientation="horizontal"
  >
-                        <com.google.android.material.textfield.TextInputEditText
+                    <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/addDateText"
                             android:layout_width="300dp"
                             android:layout_height="wrap_content"
                             android:inputType="textAutoComplete"
                             android:fontFamily="@font/comic"
                             android:typeface="sans" />
-
                 </com.google.android.material.textfield.TextInputLayout>
                 <ImageView
                     android:id="@+id/addDate"
@@ -106,14 +95,12 @@
                 android:layout_margin="10dp"
                 android:hint="content"
                 app:endIconMode="clear_text">
-
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textAutoComplete"
                     android:fontFamily="@font/comic"
                     android:typeface="sans"/>
-
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
 
@@ -124,14 +111,14 @@
                 android:layout_margin="10dp"
                 android:hint="Location"
                 app:endIconMode="clear_text">
-
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textAutoComplete"
                     android:fontFamily="@font/comic"
                     android:typeface="sans"/>
-                <com.google.android.material.textfield.TextInputLayout
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
 
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:id="@+id/plan_Email"
@@ -140,55 +127,67 @@
                     android:layout_margin="10dp"
                     android:hint="UserEmail"
                     app:endIconMode="clear_text">
-
-                    <com.google.android.material.textfield.TextInputEditText
+                <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textAutoComplete"
+                        android:inputType="textEmailAddress"
                         android:fontFamily="@font/comic"
                         android:typeface="sans"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
             </com.google.android.material.textfield.TextInputLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
-
                 <Button
                     android:id="@+id/addPlanButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="5dp"
                     android:backgroundTint="@color/purple_500"
+                    android:strokeColor ="@color/black"
+                    android:text="Save"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="15dp"
                     android:fontFamily="@font/comic"
                     android:strokeColor="@color/black"
                     android:text="Save"
-                    android:textColor="@color/white"></Button>
-
+                    android:textColor="@color/white">
+                </Button>
+                <!--                <Button-->
+                <!--                    android:id="@+id/addCalendar"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:backgroundTint="@color/purple_500"-->
+                <!--                    android:strokeColor ="@color/black"-->
+                <!--                    android:text="Calendar"-->
+                <!--                    android:layout_marginBottom="5dp"-->
+                <!--                    android:fontFamily="@font/comic"-->
+                <!--                    android:textColor="@color/white">-->
+                <!--                </Button>-->
                 <Button
-                    android:id="@+id/addCalendar"
+                    android:id="@+id/clearButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="5dp"
                     android:backgroundTint="@color/purple_500"
+                    android:strokeColor ="@color/black"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="15dp"
                     android:fontFamily="@font/comic"
                     android:strokeColor="@color/black"
                     android:text="Calendar"
                     android:textColor="@color/white"></Button>
-
-
+                <ImageView
+                    android:id="@+id/addCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:foreground="?selectableItemBackground"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="5dp"
+                    app:srcCompat="@drawable/google_calendar" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/homeButton"
         android:layout_width="wrap_content"
@@ -200,7 +199,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
@@ -212,7 +210,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
@@ -224,5 +221,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
