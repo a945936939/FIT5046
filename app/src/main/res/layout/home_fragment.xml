@@ -85,6 +85,13 @@
                 android:text="@string/humidity"
                 android:textColor="@color/black">
             </TextView>
+
+            <com.facebook.share.widget.ShareButton
+                android:id="@+id/sbPlan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="5dp"
+                android:text="Share our app!" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -213,6 +220,7 @@
                     android:textSize="20sp"/>
 
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>

@@ -5,6 +5,7 @@ import static androidx.fragment.app.FragmentManager.TAG;
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.View;
@@ -19,6 +20,9 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.assignment.databinding.ActivityAddplanBinding;
 import com.example.assignment.entity.Plan;
 import com.example.assignment.viewModel.PlanViewModel;
+import com.facebook.CallbackManager;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareButton;
 
 import java.util.List;
 
@@ -28,13 +32,20 @@ public class AddPlanActivity extends AppCompatActivity {
     private ActivityAddplanBinding binding;
     private PlanViewModel planViewModel;
     private DatePickerDialog.OnDateSetListener dateSetListener;
-
+    ShareButton shareButton;
+    CallbackManager callbackManager;
+    //setting up the content for facebook sharing
+    ShareLinkContent content = new ShareLinkContent.Builder()
+            .setContentUrl(Uri.parse("https://developers.facebook.com"))
+            .build();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityAddplanBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+
 
         binding.homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,14 +139,19 @@ public class AddPlanActivity extends AppCompatActivity {
         });
 
 
-        binding.clearButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                binding.planId.getEditText().setText("");
-                binding.planName.getEditText().setText("");
-                binding.planDate.getEditText().setText("");
-                binding.planContent.getEditText().setText("");
-            }
-        });
+
+
+
+//        binding.clearButton.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                binding.planId.getEditText().setText("");
+//                binding.planName.getEditText().setText("");
+//                binding.planDate.getEditText().setText("");
+//                binding.planContent.getEditText().setText("");
+//            }
+//        });
 
     }
+
+
 }

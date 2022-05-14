@@ -7,11 +7,13 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -24,15 +26,24 @@ import com.example.assignment.ThirdActivity;
 import com.example.assignment.WeatherApiInterface;
 import com.example.assignment.databinding.HomeFragmentBinding;
 import com.example.assignment.viewModel.SharedViewModel;
+import com.facebook.CallbackManager;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.model.SharePhoto;
+import com.facebook.share.model.SharePhotoContent;
+import com.facebook.share.widget.ShareButton;
+import com.facebook.share.widget.ShareDialog;
 import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.transform.Result;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -43,7 +54,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class HomeFragment extends Fragment {
     private SharedViewModel model;
     private HomeFragmentBinding binding;
-    public HomeFragment(){}
+    CallbackManager callbackManager;
+    ShareDialog shareDialog;
+
+
+    //creating the content of facebook sharing
+    ShareButton shareButton;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,12 +69,26 @@ public class HomeFragment extends Fragment {
         binding = HomeFragmentBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
+
+        //facebook sharing
+        //photo sharing not working for now
+//        Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.kcal);
+//        SharePhoto photo = new SharePhoto.Builder()
+//                .setBitmap(image)
+//                .build();
+//        SharePhotoContent content = new SharePhotoContent.Builder()
+//                .addPhoto(photo)
+//                .build();
+
+        ShareLinkContent content = new ShareLinkContent.Builder()
+                .setContentUrl(Uri.parse("https://www.facebook.com/profile.php?id=100081323015982&sk=about"))
+                .build();
+
         /**binding.signOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getActivity(), LoginActivity.class));
-            }
+        @Override public void onClick(View view) {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getActivity(), LoginActivity.class));
+        }
         });*/
 
         binding.heartRateView.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +133,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(Call<Root> call, Response<Root> response) {
                 Root root = response.body();
-                double temp =  root.getTemp() - 273.15;
+                double temp = root.getTemp() - 273.15;
                 String format = new DecimalFormat("#.0").format(temp);
                 int pressure = root.getPressure();
                 int humidity = root.getHumidity();
@@ -111,7 +143,7 @@ public class HomeFragment extends Fragment {
                 binding.pressureTextView.setText("Pressure:  " + pressure + " hPa");
                 binding.humidityTextView.setText("Humidity:  " + humidity + " %rh");
                 binding.windSpeedTextView.setText("Wind Speed:  " + windSpeed + " m/s");
-                String url = "https://openweathermap.org/img/w/" + icon +".png";
+                String url = "https://openweathermap.org/img/w/" + icon + ".png";
                 Picasso.get().load(url).into(binding.imageView);
             }
 
@@ -120,12 +152,32 @@ public class HomeFragment extends Fragment {
                 System.out.println(t.getMessage());
             }
         });
+//        binding.heartRateIcon.setImageBitmap(image);
+//        if (ShareDialog.canShow(ShareLinkContent.class)) {
+//            Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.kcal);
+//            SharePhoto photo = new SharePhoto.Builder()
+//                    .setBitmap(image)
+//                    .build();
+//            SharePhotoContent content = new SharePhotoContent.Builder()
+//                    .addPhoto(photo)
+//                    .build();
+//            shareDialog.show(content);
+//                    shareButton = binding.sbPlan;
+//        shareButton.setShareContent(content);
+//        }
+        shareButton = binding.sbPlan;
+        shareButton.setShareContent(content);
+        Log.d("button",shareButton.getClass().toString());
+//        ShareDialog.show(this, content);
+
         return view;
     }
+
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
+
 }
