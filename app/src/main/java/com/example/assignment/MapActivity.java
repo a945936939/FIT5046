@@ -74,12 +74,26 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         mapboxMap.addMarker(new MarkerOptions()
                         .position(new LatLng(-37.876823, 145.045837))
                         .title("Caufield Campus"));
+
         mapboxMap.addMarker(new MarkerOptions()
                 .position(new LatLng(-37.92441266314522, 145.128469))
                 .title("Home"));
+
         mapboxMap.addMarker(new MarkerOptions()
-                .position(new LatLng(-37.92441266314522, 145.128469))
-                .title("Home"));
+                .position(new LatLng(-37.9204935090444, 145.13627628251368))
+                .title("Rec Xpress 24/7 Fitness Clayton"));
+
+        mapboxMap.addMarker(new MarkerOptions()
+                .position(new LatLng(-37.90816304384556, 145.11893566930863))
+                .title("Zap Fitness 24/7 Clayton"));
+
+        mapboxMap.addMarker(new MarkerOptions()
+                .position(new LatLng(-37.91175212247845, 145.13644512954528))
+                .title("Monash Sport"));
+
+        mapboxMap.addMarker(new MarkerOptions()
+                .position(new LatLng(-37.89892172986756, 145.1380967101296))
+                .title("Muscle City Gym"));
 
     }
 
