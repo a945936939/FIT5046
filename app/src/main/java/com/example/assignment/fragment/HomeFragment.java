@@ -163,7 +163,7 @@ public class HomeFragment extends Fragment {
 //        shareButton.setShareContent(content);
 //        }
 
-        shareButton = binding.sbPlan;
+        shareButton = binding.shareFacebook;
         shareButton.setShareContent(content);
         Log.d("button",shareButton.getClass().toString());
 //        ShareDialog.show(this, content);
