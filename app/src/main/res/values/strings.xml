@@ -24,5 +24,6 @@
     <string name="humidity">Humidity</string>
     <string name="mapbox_access_token">pk.eyJ1IjoiamVycnkzMjA0MzAzMSIsImEiOiJjbDMxMmRzaGMxdmkwM2xtdWF1MDB4Nm02In0.92UEBCBSvVNXdr86JAXWFw</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="facebook_app_id">667423597654187</string>
+    <string name="facebook_client_token">f67d203a1ca8ca87b00f24b6bcb7294f</string>
 </resources>

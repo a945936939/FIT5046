@@ -16,6 +16,7 @@ import androidx.navigation.ui.NavigationUI;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +29,9 @@ import com.example.assignment.fragment.HomeFragment;
 import com.example.assignment.fragment.KcalFragment;
 import com.example.assignment.fragment.WalkActivityFragment;
 import com.example.assignment.viewModel.PlanViewModel;
+import com.facebook.CallbackManager;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.text.DateFormat;
@@ -45,13 +49,23 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding  binding;
     private AppBarConfiguration mAppBarConfiguration;
-
+    ShareButton shareButton;
+    CallbackManager callbackManager;
+    //setting up the content for facebook sharing
+    ShareLinkContent content = new ShareLinkContent.Builder()
+            .setContentUrl(Uri.parse("https://developers.facebook.com"))
+            .build();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+
+        //facebook sharing
+//        shareButton = binding.sbPlan;
+//        shareButton.setShareContent(content);
 
         setSupportActionBar(binding.appBar.toolbar);
         mAppBarConfiguration = new AppBarConfiguration.Builder(

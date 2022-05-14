@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.assignment">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/fui_ic_check_circle_black_128dp"
@@ -76,6 +78,12 @@
             android:name=".MapActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
+
+    <meta-data tools:replace="android:value" android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id" />
+    <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider667423597654187"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true" />
     </application>
 
 </manifest>

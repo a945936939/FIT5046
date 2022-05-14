@@ -56,7 +56,9 @@
                         android:id="@+id/kcal_fragment"
                         android:title="Kcal"
                         android:icon="@drawable/ic_baseline_local_fire_department_24" />
-                </group>
+
+
+    </group>
             </menu>
         </item>
     </group>
