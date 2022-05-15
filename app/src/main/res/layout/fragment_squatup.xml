@@ -16,12 +16,23 @@
         tools:layout_editor_absoluteX="54dp"
         tools:layout_editor_absoluteY="-46dp" />
 
+    <ImageView
+        android:id="@+id/squatupPic"
+        android:layout_width="298dp"
+        android:layout_height="264dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/squat_pic"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="342dp"
         android:layout_height="242dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="130dp"
         android:max="100"
         android:scaleY="4"
         android:visibility="gone"

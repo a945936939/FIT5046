@@ -49,6 +49,7 @@ public class SquatUpFragment extends Fragment {
                 binding.progressBar.setVisibility(View.VISIBLE);
                 binding.textCount.setVisibility(View.VISIBLE);
                 binding.counter.setVisibility(View.VISIBLE);
+                binding.squatupPic.setVisibility(View.VISIBLE);
                 binding.startCountButton.setVisibility(View.GONE);
                 binding.shake.setVisibility(View.GONE);
             }
