@@ -90,4 +90,8 @@ dependencies {
     //facebook
     implementation 'com.facebook.android:facebook-android-sdk:latest.release'
 
+
+    //gif
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
+
 }
