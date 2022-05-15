@@ -29,7 +29,7 @@ public class SquatUpFragment extends Fragment {
     private double change;
 
 
-    public SquatupFragment() {
+    public SquatUpFragment() {
     }
 
     @Override

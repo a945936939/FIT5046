@@ -20,7 +20,7 @@
         android:name="com.example.assignment.fragment.KcalFragment"
         android:label="Kcal" />
     <fragment
-        android:id="@+id/squatUp_fragment"
+        android:id="@+id/squatup_fragment"
         android:name="com.example.assignment.fragment.SquatUpFragment"
         android:label="SquatUpFragment" />
     <activity
