@@ -24,9 +24,44 @@ public class SquatUpFragment extends Fragment {
     private FragmentSquatupBinding binding;
     private double accelerationCurrentValue;
     private double accelerationPreviousValue;
-    private int counter;
+    private int counter = -1;
 
     private double change;
+
+
+    public SquatUpFragment() {
+    }
+
+    @Override
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+
+        Log.e("Squatup fragment", "2");
+        // Inflate the View for this fragment using the binding
+        binding = FragmentSquatupBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+        binding.progressBar.setMax(100);//sets the maximum value 100
+        binding.startCountButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.progressBar.setVisibility(View.VISIBLE);
+                binding.textCount.setVisibility(View.VISIBLE);
+                binding.counter.setVisibility(View.VISIBLE);
+                binding.squatupPic.setVisibility(View.VISIBLE);
+                binding.startCountButton.setVisibility(View.GONE);
+                binding.shake.setVisibility(View.GONE);
+            }
+
+
+        });
+        mSensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
+        mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        return view;
+
+
+    }
 
     private SensorEventListener sensorEventListener = new SensorEventListener() {
 
@@ -52,38 +87,6 @@ public class SquatUpFragment extends Fragment {
 
         }
     };
-
-    public SquatUpFragment() {
-    }
-
-    @Override
-
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-
-        Log.e("Squatup fragment", "2");
-        // Inflate the View for this fragment using the binding
-        binding = FragmentSquatupBinding.inflate(inflater, container, false);
-        View view = binding.getRoot();
-        binding.progressBar.setMax(100);//sets the maximum value 100
-//        binding.startCountButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//
-//
-//            }
-//
-//
-//        });
-        mSensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
-        mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        return view;
-
-
-    }
-
 
     @Override
     public void onDestroyView() {
