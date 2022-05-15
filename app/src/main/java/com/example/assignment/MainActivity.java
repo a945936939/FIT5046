@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 R.id.heart_rate_fragment,
                 R.id.walk_activity_fragment,
                 R.id.kcal_fragment,
-                R.id.squatup_fragment,
+                R.id.squatUp_fragment,
                 R.id.ThirdActivity,
                 R.id.PlanListActivity,
                 R.id.MapActivity,
