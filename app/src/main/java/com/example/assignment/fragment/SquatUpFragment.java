@@ -28,17 +28,14 @@ public class SquatUpFragment extends Fragment {
 
     private double change;
 
-
-    public SquatUpFragment() {
-    }
+    public SquatUpFragment() {}
 
     @Override
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
-        Log.e("Squatup fragment", "2");
+        Log.e("SquatUp fragment", "2");
         // Inflate the View for this fragment using the binding
         binding = FragmentSquatupBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
@@ -49,7 +46,7 @@ public class SquatUpFragment extends Fragment {
                 binding.progressBar.setVisibility(View.VISIBLE);
                 binding.textCount.setVisibility(View.VISIBLE);
                 binding.counter.setVisibility(View.VISIBLE);
-                binding.squatupPic.setVisibility(View.VISIBLE);
+                binding.squatUpPic.setVisibility(View.VISIBLE);
                 binding.startCountButton.setVisibility(View.GONE);
                 binding.shake.setVisibility(View.GONE);
             }

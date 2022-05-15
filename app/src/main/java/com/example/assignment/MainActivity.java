@@ -97,73 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, SearchActivity.class));
             }
         });
-        // userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
-        /**final ArrayAdapter<String> spinnerAdapter = new
-         ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
-         binding.movieSpinner.setAdapter(spinnerAdapter);
-
-         binding.addButton.setOnClickListener(new View.OnClickListener() {
-         public void onClick(View v) {
-         String newMovie = binding.editText.getText().toString();
-         spinnerAdapter.add(newMovie);
-         spinnerAdapter.notifyDataSetChanged();
-         binding.movieSpinner.setSelection(spinnerAdapter.getPosition(newMovie));
-         }
-         });
-         binding.clearButton.setOnClickListener(new View.OnClickListener() {
-         public void onClick(View v) {
-         //binding.editText.getText().toString();
-         binding.editText.setText("");
-         }
-         });*/
-
-        /**binding.signOutButton.setOnClickListener(new View.OnClickListener() {
-        @Override public void onClick(View view) {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(MainActivity.this, LoginActivity.class));
-        }
-        });
-
-         binding.jumpButton.setOnClickListener(new View.OnClickListener() {
-        @Override public void onClick(View view) {
-        startActivity(new Intent(MainActivity.this, ThirdActivity.class));
-        }
-        });
-
-         binding.navigationButton.setOnClickListener(new View.OnClickListener() {
-        @Override public void onClick(View view) {
-        startActivity(new Intent(MainActivity.this, NavigationActivity.class));
-        }
-        });*/
-
-        /**
-         * List<User> userList = userViewModel.getAllUsersInList();
-         // {"001":{"firstName": "frank", "lastName": "Zhang", "id": "001"}}
-         Map<String, User> userMap = new HashMap<>();
-         for (User user: userList)
-         {
-         userMap.put(user.getUserId(), user);
-         }
-         Gson gson = new Gson();
-         String jsonStr = gson.toJson(userMap);
-
-         // Transform jsonStr into "Data" type
-         Data.Builder uploadPlaceBuilder = new Data.Builder();
-         Map<String, Object> placeMap = new HashMap<>();
-         placeMap.put("UserJsonStr", jsonStr);
-         uploadPlaceBuilder.putAll(placeMap);
-         Data placeInfoInputData = uploadPlaceBuilder.build();
-
-         // transfer the data to work manager
-         WorkRequest saveRequest =
-         new PeriodicWorkRequest.Builder(UploadWorker.class,
-         1, TimeUnit.DAYS,
-         120,TimeUnit.MINUTES)
-         .setInputData(placeInfoInputData)
-         .build();
-         WorkManager.getInstance(this).enqueue(saveRequest);
-         */
     }
 
     public void getHeartRateFragment() {
@@ -189,6 +123,5 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.nav_host_fragment, kcalFragment);
         fragmentTransaction.commit();
     }
-
 
 }
