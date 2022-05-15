@@ -14,11 +14,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.assignment.databinding.FragmentSquatupBinding;
 
-public class SquatupFragment extends Fragment {
+public class SquatUpFragment extends Fragment {
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
 
@@ -54,7 +53,7 @@ public class SquatupFragment extends Fragment {
         }
     };
 
-    public SquatupFragment() {
+    public SquatUpFragment() {
     }
 
     @Override
