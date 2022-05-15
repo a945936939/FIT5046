@@ -10,10 +10,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,9 +18,7 @@ import android.view.View;
 import com.example.assignment.databinding.ActivityMainBinding;
 import com.example.assignment.fragment.HeartRateFragment;
 import com.example.assignment.fragment.KcalFragment;
-import com.example.assignment.fragment.SquatupFragment;
 import com.example.assignment.fragment.WalkActivityFragment;
-import com.example.assignment.viewModel.PlanViewModel;
 import com.facebook.CallbackManager;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.ShareButton;
@@ -62,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 R.id.heart_rate_fragment,
                 R.id.walk_activity_fragment,
                 R.id.kcal_fragment,
-                R.id.fragment_squatup,
+                R.id.squatUp_fragment,
                 R.id.ThirdActivity,
                 R.id.PlanListActivity,
                 R.id.MapActivity,

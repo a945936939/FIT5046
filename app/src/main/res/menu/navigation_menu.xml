@@ -57,9 +57,9 @@
                         android:title="Kcal"
                         android:icon="@drawable/ic_baseline_local_fire_department_24" />
                     <item
-                        android:id="@+id/fragment_squatup"
-                        android:title="Squat up"
-                        android:icon="@drawable/ic_baseline_local_fire_department_24" />
+                        android:id="@+id/squatUp_fragment"
+                        android:title="Squat Up"
+                        android:icon="@drawable/ic_baseline_accessibility_new_24" />
 
 
     </group>
