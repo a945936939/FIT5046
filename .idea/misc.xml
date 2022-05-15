@@ -13,7 +13,7 @@
         <entry key="..\:/Android_project/Assignment/app/src/main/res/drawable/ic_baseline_cloud_24.xml" value="0.1605" />
         <entry key="..\:/Android_project/Assignment/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.158" />
         <entry key="..\:/Android_project/Assignment/app/src/main/res/drawable/side_nav_bar.xml" value="0.1885" />
-        <entry key="..\:/Android_project/Assignment/app/src/main/res/layout/activity_addplan.xml" value="0.25" />
+        <entry key="..\:/Android_project/Assignment/app/src/main/res/layout/activity_addplan.xml" value="0.25462962962962965" />
         <entry key="..\:/Android_project/Assignment/app/src/main/res/layout/activity_calendar.xml" value="0.25462962962962965" />
         <entry key="..\:/Android_project/Assignment/app/src/main/res/layout/activity_chart.xml" value="0.25277777777777777" />
         <entry key="..\:/Android_project/Assignment/app/src/main/res/layout/activity_home.xml" value="0.2814814814814815" />
@@ -25,7 +25,6 @@
         <entry key="..\:/Android_project/Assignment/app/src/main/res/layout/activity_new_user.xml" value="0.26875" />
         <entry key="..\:/Android_project/Assignment/app/src/main/res/layout/activity_piechart.xml" value="0.32916666666666666" />
         <entry key="..\:/Android_project/Assignment/app/src/main/res/layout/activity_planlist.xml" value="0.25277777777777777" />
-        <entry key="..\:/Android_project/Assignment/app/src/main/res/layout/activity_search.xml" value="0.25" />
         <entry key="..\:/Android_project/Assignment/app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="..\:/Android_project/Assignment/app/src/main/res/layout/activity_third.xml" value="0.25462962962962965" />
         <entry key="..\:/Android_project/Assignment/app/src/main/res/layout/add_fragment.xml" value="0.30648148148148147" />
@@ -55,15 +54,19 @@
         <entry key="app/src/main/res/layout/activity_new_user.xml" value="0.3111413043478261" />
         <entry key="app/src/main/res/layout/activity_planlist.xml" value="0.3111413043478261" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.3111413043478261" />
+        <entry key="app/src/main/res/layout/activity_squat_up.xml" value="0.49959259033203135" />
         <entry key="app/src/main/res/layout/activity_third.xml" value="0.3111413043478261" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.15273556231003038" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.15273556231003038" />
         <entry key="app/src/main/res/layout/fragment_heart_rate.xml" value="0.15273556231003038" />
         <entry key="app/src/main/res/layout/fragment_kcal.xml" value="0.15273556231003038" />
+        <entry key="app/src/main/res/layout/fragment_squatup.xml" value="0.4970748901367188" />
+        <entry key="app/src/main/res/layout/fragment_squatup2.xml" value="0.31036376953125" />
         <entry key="app/src/main/res/layout/fragment_walk_activity.xml" value="0.20923913043478262" />
         <entry key="app/src/main/res/layout/home_fragment.xml" value="0.24592590332031253" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.3111413043478261" />
         <entry key="app/src/main/res/layout/recyclerview_item.xml" value="0.1281661600810537" />
+        <entry key="app/src/main/res/layout/squatup_fragment.xml" value="0.3140625" />
         <entry key="app/src/main/res/menu/navigation_menu.xml" value="0.2635416666666667" />
       </map>
     </option>
