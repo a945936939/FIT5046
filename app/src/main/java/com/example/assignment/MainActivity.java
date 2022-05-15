@@ -46,11 +46,6 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-
-        //facebook sharing
-//        shareButton = binding.sbPlan;
-//        shareButton.setShareContent(content);
-
         setSupportActionBar(binding.appBar.toolbar);
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.home_fragment,

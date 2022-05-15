@@ -65,27 +65,9 @@ public class HomeFragment extends Fragment {
         binding = HomeFragmentBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-
-        //facebook sharing
-        //photo sharing not working for now
-//        Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.kcal);
-//        SharePhoto photo = new SharePhoto.Builder()
-//                .setBitmap(image)
-//                .build();
-//        SharePhotoContent content = new SharePhotoContent.Builder()
-//                .addPhoto(photo)
-//                .build();
-
         ShareLinkContent content = new ShareLinkContent.Builder()
                 .setContentUrl(Uri.parse("https://www.facebook.com/profile.php?id=100081323015982&sk=about"))
                 .build();
-
-        /**binding.signOutButton.setOnClickListener(new View.OnClickListener() {
-        @Override public void onClick(View view) {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getActivity(), LoginActivity.class));
-        }
-        });*/
 
         binding.heartRateView.setOnClickListener(new View.OnClickListener() {
             @Override
