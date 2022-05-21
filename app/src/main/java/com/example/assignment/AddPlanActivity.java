@@ -145,6 +145,8 @@ public class AddPlanActivity extends AppCompatActivity {
                 binding.planName.getEditText().setText("");
                 binding.planDate.getEditText().setText("");
                 binding.planContent.getEditText().setText("");
+                binding.planLocation.getEditText().setText("");
+                binding.planEmail.getEditText().setText("");
             }
         });
 

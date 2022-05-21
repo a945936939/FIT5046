@@ -107,9 +107,7 @@
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:hint="@string/gender"
-                    android:paddingHorizontal="5dp"
-                    app:endIconMode="clear_text"
-                    app:errorEnabled="true">
+                    android:paddingHorizontal="5dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/genderInput"
@@ -119,6 +117,12 @@
                         android:typeface="sans">
                     </com.google.android.material.textfield.TextInputEditText>
 
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/comic"
+                        android:typeface="sans" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout

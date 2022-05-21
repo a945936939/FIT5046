@@ -1,213 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     android:gravity="center">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:layout_margin="18dp"
-        app:cardBackgroundColor = "@color/white"
-        app:cardCornerRadius = "18dp"
-        app:cardElevation = "10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
 
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:id="@+id/plan_Id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Plan ID"
-                android:layout_margin="10dp"
-                app:endIconMode="clear_text">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/planIDInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:fontFamily="@font/comic"
-                    android:typeface="sans"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:id="@+id/plan_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Name"
-                android:layout_margin="10dp"
-                app:endIconMode="clear_text">
-                <com.google.android.material.textfield.TextInputEditText
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textAutoComplete"
-                    android:fontFamily="@font/comic"
-                    android:typeface="sans" />
-            </com.google.android.material.textfield.TextInputLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_margin="10dp">
+                android:orientation="vertical"
+                android:padding="3dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="8dp"
+                    android:textColor="#000000"
+                    android:text="Add New Plan"
+                    android:fontFamily="@font/comic"
+                    android:typeface="sans"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
                 <com.google.android.material.textfield.TextInputLayout
 
-                    android:id="@+id/plan_date"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:hint="Date：dd/MM/YYYY"
-                    android:orientation="horizontal"
- >
+                    android:id="@+id/plan_Id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Plan ID: "
+                    android:layout_margin="10dp"
+                    app:endIconMode="clear_text">
                     <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/addDateText"
-                            android:layout_width="300dp"
-                            android:layout_height="wrap_content"
-                            android:inputType="textAutoComplete"
-                            android:fontFamily="@font/comic"
-                            android:typeface="sans" />
+                        android:id="@+id/planIDInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:fontFamily="@font/comic"
+                        android:typeface="sans"/>
                 </com.google.android.material.textfield.TextInputLayout>
-                <ImageView
-                    android:id="@+id/addDate"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white"
-                    app:srcCompat="@drawable/ic_baseline_calendar_month_24">
-                </ImageView>
-            </LinearLayout>
-            <com.google.android.material.textfield.TextInputLayout
-
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:id="@+id/plan_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint="content"
-                app:endIconMode="clear_text">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textAutoComplete"
-                    android:fontFamily="@font/comic"
-                    android:typeface="sans"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:id="@+id/plan_Location"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint="Location"
-                app:endIconMode="clear_text">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textAutoComplete"
-                    android:fontFamily="@font/comic"
-                    android:typeface="sans"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
+                <com.google.android.material.textfield.TextInputLayout
 
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:id="@+id/plan_Email"
+                    android:id="@+id/plan_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Plan Name: "
+                    android:layout_margin="10dp"
+                    app:endIconMode="clear_text">
+                    <com.google.android.material.textfield.TextInputEditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textAutoComplete"
+                        android:fontFamily="@font/comic"
+                        android:typeface="sans" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp">
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        android:id="@+id/plan_date"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:hint="Date：dd/MM/YYYY"
+                        android:orientation="horizontal"
+     >
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/addDateText"
+                                android:layout_width="300dp"
+                                android:layout_height="wrap_content"
+                                android:inputType="textAutoComplete"
+                                android:fontFamily="@font/comic"
+                                android:typeface="sans" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/addDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/ic_baseline_calendar_month_24">
+                    </ImageView>
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:id="@+id/plan_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:hint="UserEmail"
+                    android:hint="Content: "
                     app:endIconMode="clear_text">
-                <com.google.android.material.textfield.TextInputEditText
+                    <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textEmailAddress"
+                        android:inputType="textAutoComplete"
                         android:fontFamily="@font/comic"
                         android:typeface="sans"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/addPlanButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/purple_500"
-                    android:layout_marginEnd="15dp"
-                    android:fontFamily="@font/comic"
-                    android:strokeColor="@color/black"
-                    android:text="Save"
-                    android:textColor="@color/white">
-                </Button>
+                <com.google.android.material.textfield.TextInputLayout
 
-                <Button
-                    android:id="@+id/clearButton"
-                    android:layout_width="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:id="@+id/plan_Location"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/purple_500"
-                    android:layout_marginStart="15dp"
-                    android:fontFamily="@font/comic"
-                    android:strokeColor="@color/black"
-                    android:text="Clear"
-                    android:textColor="@color/white">
-                </Button>
+                    android:layout_margin="10dp"
+                    android:hint="Location: "
+                    app:endIconMode="clear_text">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textAutoComplete"
+                        android:fontFamily="@font/comic"
+                        android:typeface="sans"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <ImageView
-                    android:id="@+id/addCalendar"
-                    android:layout_width="wrap_content"
+                <com.google.android.material.textfield.TextInputLayout
+
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:id="@+id/plan_Email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:hint="UserEmail: "
+                        app:endIconMode="clear_text">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:fontFamily="@font/comic"
+                            android:typeface="sans"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:foreground="?selectableItemBackground"
-                    android:layout_marginStart="20dp"
-                    app:srcCompat="@drawable/google_calendar" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/addPlanButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/purple_500"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/comic"
+                        android:strokeColor="@color/black"
+                        android:text="Save"
+                        android:textColor="@color/white">
+                    </Button>
+
+                    <Button
+                        android:id="@+id/clearButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/purple_500"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/comic"
+                        android:strokeColor="@color/black"
+                        android:text="Clear"
+                        android:textColor="@color/white">
+                    </Button>
+
+                    <ImageView
+                        android:id="@+id/addCalendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:foreground="?selectableItemBackground"
+                        android:layout_marginStart="30dp"
+                        app:srcCompat="@drawable/google_calendar" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/homeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:contentDescription="Home"
-        android:src="@drawable/ic_baseline_home_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/nextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="Next"
-        android:src="@drawable/ic_baseline_arrow_forward_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="16dp"
-        android:contentDescription="Back"
-        android:src="@drawable/ic_baseline_arrow_back_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="45dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:contentDescription="Back"
+                android:src="@drawable/ic_baseline_arrow_back_24">
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/homeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="45dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:contentDescription="Home"
+                android:src="@drawable/ic_baseline_home_24">
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/nextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:contentDescription="Next"
+                android:src="@drawable/ic_baseline_arrow_forward_24">
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SignUpActivity extends AppCompatActivity {
     private ActivitySignupBinding binding;
     private FirebaseAuth mAuth;
@@ -26,6 +30,13 @@ public class SignUpActivity extends AppCompatActivity {
         binding = ActivitySignupBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        List<String> list = new ArrayList<String>();
+        list.add("Male");
+        list.add("Female");
+
+        final ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this , android.R.layout.simple_spinner_item, list);
+        binding.spinner.setAdapter(spinnerAdapter);
 
         mAuth = FirebaseAuth.getInstance();
 

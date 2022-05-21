@@ -60,6 +60,10 @@ public class NewUserActivity extends AppCompatActivity {
                 binding.editUserId.setText("");
                 binding.editUserFirstName.setText("");
                 binding.editUserLastName.setText("");
+                binding.editUserGender.setText("");
+                binding.editUserAge.setText("");
+                binding.editUserYearOfBirth.setText("");
+                binding.editUserHeight.setText("");
             }
         });
     }

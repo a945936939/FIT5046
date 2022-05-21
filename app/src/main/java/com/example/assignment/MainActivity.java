@@ -25,6 +25,8 @@ import com.facebook.share.widget.ShareButton;
 import com.example.assignment.search.SearchActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
+import timber.log.Timber;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.e("Main activity", "line1");
+        Timber.tag("Main activity").e("line1");
 
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
