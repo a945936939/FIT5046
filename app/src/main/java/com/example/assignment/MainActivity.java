@@ -1,6 +1,7 @@
 package com.example.assignment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -94,30 +95,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, SearchActivity.class));
             }
         });
-
     }
 
-    public void getHeartRateFragment() {
+    public void getFragment(Fragment nextFragment) {
         FragmentManager fragmentmanager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentmanager.beginTransaction();
-        HeartRateFragment heartRateFragment = new HeartRateFragment();
-        fragmentTransaction.replace(R.id.nav_host_fragment, heartRateFragment);
-        fragmentTransaction.commit();
-    }
-
-    public void getWalkActivityFragment() {
-        FragmentManager fragmentmanager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentmanager.beginTransaction();
-        WalkActivityFragment walkActivityFragment = new WalkActivityFragment();
-        fragmentTransaction.replace(R.id.nav_host_fragment, walkActivityFragment);
-        fragmentTransaction.commit();
-    }
-
-    public void getKcalFragment() {
-        FragmentManager fragmentmanager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentmanager.beginTransaction();
-        KcalFragment kcalFragment = new KcalFragment();
-        fragmentTransaction.replace(R.id.nav_host_fragment, kcalFragment);
+        fragmentTransaction.add(R.id.nav_host_fragment, nextFragment);
         fragmentTransaction.commit();
     }
 

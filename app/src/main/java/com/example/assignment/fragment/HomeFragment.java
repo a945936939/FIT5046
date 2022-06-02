@@ -52,7 +52,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 MainActivity mainActivity = (MainActivity) getActivity();
                 assert mainActivity != null;
-                mainActivity.getHeartRateFragment();
+                mainActivity.getFragment(new HeartRateFragment());
             }
         });
 
@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 MainActivity mainActivity = (MainActivity) getActivity();
                 assert mainActivity != null;
-                mainActivity.getWalkActivityFragment();
+                mainActivity.getFragment(new WalkActivityFragment());
             }
         });
 
@@ -70,7 +70,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 MainActivity mainActivity = (MainActivity) getActivity();
                 assert mainActivity != null;
-                mainActivity.getKcalFragment();
+                mainActivity.getFragment(new KcalFragment());
             }
         });
 
