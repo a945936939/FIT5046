@@ -110,20 +110,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-//        binding.heartRateIcon.setImageBitmap(image);
-//        if (ShareDialog.canShow(ShareLinkContent.class)) {
-//            Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.kcal);
-//            SharePhoto photo = new SharePhoto.Builder()
-//                    .setBitmap(image)
-//                    .build();
-//            SharePhotoContent content = new SharePhotoContent.Builder()
-//                    .addPhoto(photo)
-//                    .build();
-//            shareDialog.show(content);
-//                    shareButton = binding.sbPlan;
-//        shareButton.setShareContent(content);
-//        }
-
         shareButton = binding.shareFacebook;
         shareButton.setShareContent(content);
         Log.d("button",shareButton.getClass().toString());
