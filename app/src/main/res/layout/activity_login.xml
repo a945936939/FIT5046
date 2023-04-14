@@ -114,4 +114,15 @@
 
     </androidx.cardview.widget.CardView>
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comic"
+        android:gravity="center"
+        android:text="免登陆进入"
+        android:layout_marginTop="2dp"
+        android:textSize="13sp"
+        android:typeface="sans"/>
+
 </LinearLayout>
